@@ -29,6 +29,7 @@
     "dva": "^2.4.0",
     "enquire-js": "^0.2.1",
     "hash.js": "^1.1.5",
+    "hydrogen-js-sdk": "^1.6.4",
     "lodash": "^4.17.10",
     "lodash-decorators": "^6.0.0",
     "memoize-one": "^4.0.0",
@@ -77,8 +78,8 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.0.0",
     "umi": "^2.1.1",
-    "umi-plugin-react": "^1.1.1",
-    "umi-plugin-ga": "^1.0.3"
+    "umi-plugin-ga": "^1.0.3",
+    "umi-plugin-react": "^1.1.1"
   },
   "optionalDependencies": {
     "puppeteer": "^1.6.0"
