@@ -18,7 +18,19 @@ export default [
     authority: ['admin', 'user'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
+      { path: '/', redirect: '/sport/list' },
+      {
+        path: '/sport',
+        icon: 'table',
+        name: 'sport',
+        routes: [
+          {
+            path: '/sport/list',
+            name: 'list',
+            component: './Sport/index',
+          },
+        ],
+      },
       {
         path: '/dashboard',
         name: 'dashboard',
@@ -261,4 +273,4 @@ export default [
       },
     ],
   },
-];
+]
