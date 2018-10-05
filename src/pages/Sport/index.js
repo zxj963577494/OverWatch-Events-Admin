@@ -45,7 +45,8 @@ const CreateForm = Form.create()(props => {
       if (isAdd) {
         handleAdd(values)
       } else {
-        handleEdit(values)
+        const id = model.objectId
+        handleEdit({id, ...values})
       }
     })
   }
@@ -63,9 +64,6 @@ const CreateForm = Form.create()(props => {
       onOk={okHandle}
       onCancel={cancelHandle}
     >
-      {form.getFieldDecorator('id', {
-        initialValue: model.objectId,
-      })(<Input type="hidden" />)}
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事名称">
         {form.getFieldDecorator('title', {
           initialValue: model.title,
@@ -270,6 +268,8 @@ class SportList extends PureComponent {
       title: '操作',
       render: (text, record) => (
         <Fragment>
+          <a onClick={() => this.handleEditClick(record)}>编辑</a>
+          <Divider type="vertical" />
           <a onClick={() => this.handleRemove(record)}>移除</a>
           <Divider type="vertical" />
           <a href="">新建赛程</a>
@@ -355,17 +355,7 @@ class SportList extends PureComponent {
   handleAddClick = () => {
     this.setState({
       isAdd: true,
-      model: {
-        title: '',
-        abbreviatedTitle: '',
-        englishTitle: '',
-        description: '',
-        logo: '',
-        pic: '',
-        startDate: moment(),
-        endDate: moment(),
-        status: 'PENDING',
-      },
+      model: {},
     })
     this.handleModalVisible(true)
   }
