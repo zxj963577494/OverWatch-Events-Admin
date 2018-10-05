@@ -3,7 +3,6 @@ import {
   getHerosByPage,
   getTotal,
   postHeros,
-  putHeros,
   removeHeros,
 } from '@/services/heros'
 
@@ -45,14 +44,8 @@ export default {
         },
       })
     },
-    *create({ payload, callback }, { call }) {
+    *submit({ payload, callback }, { call }) {
       yield call(postHeros, payload)
-      if (callback) {
-        callback()
-      }
-    },
-    *edit({ payload, callback }, { call }) {
-      yield call(putHeros, payload)
       if (callback) {
         callback()
       }

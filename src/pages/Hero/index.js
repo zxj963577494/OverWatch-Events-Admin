@@ -93,12 +93,12 @@ class BasicList extends PureComponent {
       })
       if (isAdd) {
         dispatch({
-          type: 'hero/create',
+          type: 'hero/submit',
           payload: { ...fieldsValue },
         })
       } else {
         dispatch({
-          type: 'hero/edit',
+          type: 'hero/submit',
           payload: { id, ...fieldsValue },
         })
       }
@@ -366,7 +366,7 @@ class BasicList extends PureComponent {
                         this.handleRemove(item)
                       }}
                     >
-                      删除
+                      移除
                     </a>,
                   ]}
                 >

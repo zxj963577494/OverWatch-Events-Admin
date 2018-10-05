@@ -49,23 +49,6 @@ export async function postHeros(payload) {
   return query.save()
 }
 
-export async function putHeros(payload) {
-  const query = Bmob.Query('Hero')
-  const params = []
-  for (const i in payload) {
-    if (Object.prototype.hasOwnProperty.call(payload, i)) {
-      params.push({
-        key: i,
-        value: payload[i],
-      })
-    }
-  }
-  params.forEach(data => {
-    query.set(data.key, data.value)
-  })
-  return query.save()
-}
-
 export async function removeHeros(payload) {
   const query = Bmob.Query('Hero')
   const { objectId } = payload
