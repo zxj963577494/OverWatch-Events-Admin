@@ -2,6 +2,7 @@ import {
   getSportsById,
   getSportsByPage,
   getTotal,
+  postSports,
   putSports,
   removeSports,
 } from '@/services/sports'
@@ -45,6 +46,12 @@ export default {
       })
     },
     *create({ payload, callback }, { call }) {
+      yield call(postSports, payload)
+      if (callback) {
+        callback()
+      }
+    },
+    *edit({ payload, callback }, { call }) {
       yield call(putSports, payload)
       if (callback) {
         callback()

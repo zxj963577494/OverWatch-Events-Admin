@@ -32,6 +32,25 @@ export async function getSportsByPage(payload, pagination) {
   return query.find()
 }
 
+export async function postSports(payload) {
+  const query = Bmob.Query('Sport')
+  const params = []
+  for (const i in payload) {
+    if (Object.prototype.hasOwnProperty.call(payload, i)) {
+      if (i !== 'id') {
+        params.push({
+          key: i,
+          value: payload[i],
+        })
+      }
+    }
+  }
+  params.forEach(data => {
+    query.set(data.key, data.value)
+  })
+  return query.save()
+}
+
 export async function putSports(payload) {
   const query = Bmob.Query('Sport')
   const params = []

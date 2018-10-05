@@ -1,18 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import { connect } from 'dva'
 import moment from 'moment'
-import {
-  Card,
-  Form,
-  Input,
-  Button,
-  DatePicker,
-  Modal,
-  message,
-  Badge,
-  Divider,
-  Radio,
-} from 'antd'
+import { Card, Form, Input, Button, DatePicker, Modal, message, Badge, Divider, Radio } from 'antd'
 import StandardTable from '@/components/StandardTable'
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import { SPORT_STATUS } from '@/constant'
@@ -28,7 +17,16 @@ const getValue = obj =>
     .join(',')
 
 const CreateForm = Form.create()(props => {
-  const { modalVisible, form, handleAdd, handleModalVisible } = props
+  const {
+    modalVisible,
+    form,
+    handleAdd,
+    handleEdit,
+    handleModalVisible,
+    title,
+    model,
+    isAdd,
+  } = props
   const okHandle = () => {
     form.validateFields((err, fieldsValue) => {
       if (err) return
@@ -44,21 +42,33 @@ const CreateForm = Form.create()(props => {
         },
       }
       form.resetFields()
-      handleAdd(values)
+      if (isAdd) {
+        handleAdd(values)
+      } else {
+        handleEdit(values)
+      }
     })
+  }
+  const cancelHandle = () => {
+    form.resetFields()
+    handleModalVisible()
   }
   return (
     <Modal
       maskClosable={false}
       destroyOnClose
-      title="新建赛事"
+      title={title}
       width={640}
       visible={modalVisible}
       onOk={okHandle}
-      onCancel={() => handleModalVisible()}
+      onCancel={cancelHandle}
     >
+      {form.getFieldDecorator('id', {
+        initialValue: model.objectId,
+      })(<Input type="hidden" />)}
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事名称">
         {form.getFieldDecorator('title', {
+          initialValue: model.title,
           rules: [
             {
               required: true,
@@ -70,6 +80,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事英文名称">
         {form.getFieldDecorator('englishTitle', {
+          initialValue: model.englishTitle,
           rules: [
             {
               required: false,
@@ -80,6 +91,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事简称">
         {form.getFieldDecorator('abbreviatedTitle', {
+          initialValue: model.abbreviatedTitle,
           rules: [
             {
               required: false,
@@ -90,6 +102,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事描述">
         {form.getFieldDecorator('description', {
+          initialValue: model.description,
           rules: [
             {
               required: false,
@@ -100,6 +113,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事LOGO">
         {form.getFieldDecorator('logo', {
+          initialValue: model.logo,
           rules: [
             {
               required: false,
@@ -110,6 +124,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事海报">
         {form.getFieldDecorator('pic', {
+          initialValue: model.pic,
           rules: [
             {
               required: false,
@@ -120,6 +135,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事开始时间">
         {form.getFieldDecorator('startDate', {
+          initialValue: moment(model.startDate),
           rules: [
             {
               required: true,
@@ -137,6 +153,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事结束时间">
         {form.getFieldDecorator('endDate', {
+          initialValue: moment(model.endDate),
           rules: [
             {
               required: true,
@@ -154,7 +171,7 @@ const CreateForm = Form.create()(props => {
       </FormItem>
       <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="赛事状态">
         {form.getFieldDecorator('status', {
-          initialValue: 'PENDING',
+          initialValue: model.status || 'PENDING',
           rules: [
             {
               required: true,
@@ -187,14 +204,21 @@ class SportList extends PureComponent {
     expandForm: false,
     selectedRows: [],
     formValues: {},
+    model: {
+      title: '',
+    },
+    isAdd: true,
   }
-
-  pagination = {}
 
   columns = [
     {
       title: '赛事名称',
       dataIndex: 'title',
+      render: (text, record) => (
+        <Fragment>
+          <a onClick={() => this.handleEditClick(record)}>{text}</a>
+        </Fragment>
+      ),
     },
     {
       title: '赛事简称',
@@ -253,6 +277,8 @@ class SportList extends PureComponent {
       ),
     },
   ]
+
+  pagination = {}
 
   componentDidMount() {
     const { dispatch } = this.props
@@ -326,6 +352,32 @@ class SportList extends PureComponent {
     })
   }
 
+  handleAddClick = () => {
+    this.setState({
+      isAdd: true,
+      model: {
+        title: '',
+        abbreviatedTitle: '',
+        englishTitle: '',
+        description: '',
+        logo: '',
+        pic: '',
+        startDate: moment(),
+        endDate: moment(),
+        status: 'PENDING',
+      },
+    })
+    this.handleModalVisible(true)
+  }
+
+  handleEditClick = record => {
+    this.setState({
+      isAdd: false,
+      model: record,
+    })
+    this.handleModalVisible(true)
+  }
+
   handleAdd = fields => {
     const { dispatch } = this.props
 
@@ -340,6 +392,23 @@ class SportList extends PureComponent {
       },
     })
     message.success('添加成功')
+    this.handleModalVisible()
+  }
+
+  handleEdit = fields => {
+    const { dispatch } = this.props
+
+    dispatch({
+      type: 'sport/edit',
+      payload: fields,
+      callback: () => {
+        dispatch({
+          type: 'sport/fetch',
+          payload: { pagination: this.pagination },
+        })
+      },
+    })
+    message.success('编辑成功')
     this.handleModalVisible()
   }
 
@@ -366,10 +435,14 @@ class SportList extends PureComponent {
       loading,
     } = this.props
 
-    const { selectedRows, modalVisible } = this.state
+    const { selectedRows, modalVisible, isAdd, model } = this.state
 
     const parentMethods = {
+      isAdd,
+      model,
+      title: `${isAdd ? '新增' : '编辑'}赛事`,
       handleAdd: this.handleAdd,
+      handleEdit: this.handleEdit,
       handleModalVisible: this.handleModalVisible,
     }
 
@@ -378,7 +451,7 @@ class SportList extends PureComponent {
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
+              <Button icon="plus" type="primary" onClick={this.handleAddClick}>
                 新建赛事
               </Button>
             </div>
