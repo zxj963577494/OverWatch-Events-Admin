@@ -1,4 +1,10 @@
-import { getSportsById, getSportsByPage, getTotal, putSports } from '@/services/sports'
+import {
+  getSportsById,
+  getSportsByPage,
+  getTotal,
+  putSports,
+  removeSports,
+} from '@/services/sports'
 
 export default {
   namespace: 'sport',
@@ -15,27 +21,40 @@ export default {
   },
 
   effects: {
-    *getSportsById({ payload, callback }, { call }) {
+    *fetchById({ payload, callback }, { call }) {
       const response = yield call(getSportsById, payload)
       if (callback) callback(response)
     },
-    *getSportsByPage({ payload }, { call, put, select }) {
+    *fetch({ payload }, { call, put, select }) {
       const _pagination = yield select(state => state.sport.data.pagination)
+      const page = Object.assign({}, _pagination, payload.pagination)
       const total = yield call(getTotal)
-      const list = yield call(getSportsByPage, payload, payload.pagination || _pagination)
+      if (_pagination.total > total && total % page.pageSize === 0) {
+        page.currentPage -= 1
+      }
+      const list = yield call(getSportsByPage, payload, page)
       yield put({
         type: 'show',
         payload: {
           list,
           pagination: {
-            ...payload.pagination,
+            ...page,
             total,
           },
         },
       })
     },
-    *putSports({ payload }, { call }) {
+    *create({ payload, callback }, { call }) {
       yield call(putSports, payload)
+      if (callback) {
+        callback()
+      }
+    },
+    *remove({ payload, callback }, { call }) {
+      yield call(removeSports, payload)
+      if (callback) {
+        callback()
+      }
     },
   },
 

@@ -1,5 +1,4 @@
 import Bmob from 'hydrogen-js-sdk'
-import { toWhere } from '@/utils/utils'
 
 export async function getSports() {
   const query = Bmob.Query('Sport')
@@ -18,6 +17,7 @@ export async function getTotal() {
 
 export async function getSportsByPage(payload, pagination) {
   const query = Bmob.Query('Sport')
+
   const { order = 'updateAt' } = payload
 
   if (pagination) {
@@ -47,4 +47,10 @@ export async function putSports(payload) {
     query.set(data.key, data.value)
   })
   return query.save()
+}
+
+export async function removeSports(payload) {
+  const query = Bmob.Query('Sport')
+  const { objectId } = payload
+  return query.destroy(objectId)
 }
