@@ -32,6 +32,18 @@ export default [
         ],
       },
       {
+        path: '/hero',
+        icon: 'table',
+        name: 'hero',
+        routes: [
+          {
+            path: '/hero/list',
+            name: 'list',
+            component: './Hero/index',
+          },
+        ],
+      },
+      {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
