@@ -49,23 +49,6 @@ export async function postSports(payload) {
   return query.save()
 }
 
-export async function putSports(payload) {
-  const query = Bmob.Query('Sport')
-  const params = []
-  for (const i in payload) {
-    if (Object.prototype.hasOwnProperty.call(payload, i)) {
-      params.push({
-        key: i,
-        value: payload[i],
-      })
-    }
-  }
-  params.forEach(data => {
-    query.set(data.key, data.value)
-  })
-  return query.save()
-}
-
 export async function removeSports(payload) {
   const query = Bmob.Query('Sport')
   const { objectId } = payload

@@ -372,7 +372,7 @@ class SportList extends PureComponent {
     const { dispatch } = this.props
 
     dispatch({
-      type: 'sport/create',
+      type: 'sport/submit',
       payload: fields,
       callback: () => {
         dispatch({
@@ -389,7 +389,7 @@ class SportList extends PureComponent {
     const { dispatch } = this.props
 
     dispatch({
-      type: 'sport/edit',
+      type: 'sport/submit',
       payload: fields,
       callback: () => {
         dispatch({
