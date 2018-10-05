@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react'
 import { findDOMNode } from 'react-dom'
-import moment from 'moment'
 import { connect } from 'dva'
-import { List, Card, Input, Button, Avatar, Modal, Form, DatePicker, Select } from 'antd'
+import { List, Card, Input, Button, Avatar, Modal, Form, Radio, message } from 'antd'
 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import Result from '@/components/Result'
+import { HERO_ROLE } from '@/constant'
 
 import styles from './index.less'
 
 const FormItem = Form.Item
-const SelectOption = Select.Option
+const RadioGroup = Radio.Group
 const { Search, TextArea } = Input
 
 @connect(({ hero, loading }) => ({
@@ -19,7 +19,7 @@ const { Search, TextArea } = Input
 }))
 @Form.create()
 class BasicList extends PureComponent {
-  state = { visible: false, done: false }
+  state = { visible: false, done: false, isAdd: true }
 
   formLayout = {
     labelCol: { span: 7 },
@@ -30,16 +30,15 @@ class BasicList extends PureComponent {
     const { dispatch } = this.props
     dispatch({
       type: 'hero/fetch',
-      payload: {
-        count: 5,
-      },
+      payload: {},
     })
   }
 
   showModal = () => {
     this.setState({
       visible: true,
-      current: undefined,
+      current: {},
+      isAdd: true,
     })
   }
 
@@ -47,14 +46,28 @@ class BasicList extends PureComponent {
     this.setState({
       visible: true,
       current: item,
+      isAdd: false,
     })
   }
 
   handleDone = () => {
+    const {
+      dispatch,
+      hero: {
+        data: { pagination },
+      },
+    } = this.props
     setTimeout(() => this.addBtn.blur(), 0)
     this.setState({
       done: false,
       visible: false,
+    })
+    dispatch({
+      type: 'hero/fetch',
+      payload: {
+        params: {},
+        pagination,
+      },
     })
   }
 
@@ -68,19 +81,27 @@ class BasicList extends PureComponent {
   handleSubmit = e => {
     e.preventDefault()
     const { dispatch, form } = this.props
-    const { current } = this.state
-    const id = current ? current.id : ''
+    const { current, isAdd } = this.state
+    const id = current ? current.objectId : ''
 
     setTimeout(() => this.addBtn.blur(), 0)
+
     form.validateFields((err, fieldsValue) => {
       if (err) return
       this.setState({
         done: true,
       })
-      dispatch({
-        type: 'hero/submit',
-        payload: { id, ...fieldsValue },
-      })
+      if (isAdd) {
+        dispatch({
+          type: 'hero/create',
+          payload: { ...fieldsValue },
+        })
+      } else {
+        dispatch({
+          type: 'hero/edit',
+          payload: { id, ...fieldsValue },
+        })
+      }
     })
   }
 
@@ -90,6 +111,23 @@ class BasicList extends PureComponent {
       type: 'hero/submit',
       payload: { id },
     })
+  }
+
+  handleRemove = item => {
+    const { dispatch } = this.props
+    dispatch({
+      type: 'hero/remove',
+      payload: {
+        objectId: item.objectId,
+      },
+      callback: () => {
+        dispatch({
+          type: 'hero/fetch',
+          payload: { pagination: this.pagination },
+        })
+      },
+    })
+    message.success('移除成功')
   }
 
   render() {
@@ -102,7 +140,7 @@ class BasicList extends PureComponent {
     const {
       form: { getFieldDecorator },
     } = this.props
-    const { visible, done, current = {} } = this.state
+    const { visible, done, current = {}, isAdd } = this.state
 
     const modalFooter = done
       ? { footer: null, onCancel: this.handleDone }
@@ -164,7 +202,6 @@ class BasicList extends PureComponent {
           <Result
             type="success"
             title="操作成功"
-            description="一系列的信息描述，很短同样也可以带标点。"
             actions={
               <Button type="primary" onClick={this.handleDone}>
                 知道了
@@ -176,45 +213,113 @@ class BasicList extends PureComponent {
       }
       return (
         <Form onSubmit={this.handleSubmit}>
-          <FormItem label="任务名称" {...this.formLayout}>
-            {getFieldDecorator('title', {
-              rules: [{ required: true, message: '请输入任务名称' }],
-              initialValue: current.title,
-            })(<Input placeholder="请输入" />)}
+          <FormItem label="英雄名称" {...this.formLayout}>
+            {getFieldDecorator('name', {
+              rules: [{ required: true, message: '请输入英雄名称' }],
+              initialValue: current.name,
+            })(<Input placeholder="请输入英雄名称" />)}
           </FormItem>
-          <FormItem label="开始时间" {...this.formLayout}>
-            {getFieldDecorator('createdAt', {
-              rules: [{ required: true, message: '请选择开始时间' }],
-              initialValue: current.createdAt ? moment(current.createdAt) : null,
+          <FormItem label="英雄定位" {...this.formLayout}>
+            {getFieldDecorator('role', {
+              rules: [{ required: true, message: '请选择英雄定位' }],
+              initialValue: current.role || 'tank',
             })(
-              <DatePicker
-                showTime
-                placeholder="请选择"
-                format="YYYY-MM-DD HH:mm:ss"
-                style={{ width: '100%' }}
-              />
+              <RadioGroup>
+                {HERO_ROLE.map(x => (
+                  <Radio key={x.value} value={x.value}>
+                    {x.text}
+                  </Radio>
+                ))}
+              </RadioGroup>
             )}
           </FormItem>
-          <FormItem label="任务负责人" {...this.formLayout}>
-            {getFieldDecorator('owner', {
-              rules: [{ required: true, message: '请选择任务负责人' }],
-              initialValue: current.owner,
+          <FormItem {...this.formLayout} label="英雄难度">
+            {getFieldDecorator('difficulty', {
+              rules: [{ required: true, message: '请选择英雄难度！' }],
+              initialValue: current.difficulty || '1',
             })(
-              <Select placeholder="请选择">
-                <SelectOption value="付晓晓">付晓晓</SelectOption>
-                <SelectOption value="周毛毛">周毛毛</SelectOption>
-              </Select>
+              <RadioGroup>
+                <Radio key={1} value="1">
+                  一星
+                </Radio>
+                <Radio key={2} value="2">
+                  二星
+                </Radio>
+                <Radio key={3} value="3">
+                  三星
+                </Radio>
+              </RadioGroup>
             )}
           </FormItem>
-          <FormItem {...this.formLayout} label="产品描述">
-            {getFieldDecorator('subDescription', {
-              rules: [{ message: '请输入至少五个字符的产品描述！', min: 5 }],
-              initialValue: current.subDescription,
-            })(<TextArea rows={4} placeholder="请输入至少五个字符" />)}
+          <FormItem {...this.formLayout} label="英雄头像">
+            {getFieldDecorator('avatar', {
+              initialValue: current.avatar,
+              rules: [{ required: true, message: '请输入英雄头像！' }],
+            })(<Input placeholder="请输入英雄头像" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄图片">
+            {getFieldDecorator('fullshot', {
+              initialValue: current.fullshot,
+              rules: [{ required: true, message: '请输入英雄图片！' }],
+            })(<Input placeholder="请输入英雄图片" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄生命值">
+            {getFieldDecorator('health', {
+              initialValue: current.health,
+            })(<Input placeholder="请输入英雄生命值" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄护甲值">
+            {getFieldDecorator('armour', {
+              initialValue: current.armour,
+            })(<Input placeholder="请输入英雄护甲值" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄护盾值">
+            {getFieldDecorator('shield', {
+              initialValue: current.shield,
+            })(<Input placeholder="请输入英雄护盾值" />)}
+          </FormItem>
+          <FormItem label="英雄真实姓名" {...this.formLayout}>
+            {getFieldDecorator('real_name', {
+              rules: [{ required: false, message: '请输入英雄真实姓名' }],
+              initialValue: current.real_name,
+            })(<Input placeholder="请输入英雄真实姓名" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄年龄">
+            {getFieldDecorator('age', {
+              initialValue: current.age,
+            })(<Input placeholder="请输入英雄年龄" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄身高">
+            {getFieldDecorator('height', {
+              initialValue: current.height,
+            })(<Input placeholder="请输入英雄身高" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄职业">
+            {getFieldDecorator('profession', {
+              initialValue: current.profession,
+            })(<Input placeholder="请输入英雄职业" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄行动基地">
+            {getFieldDecorator('base_of_operations', {
+              initialValue: current.base_of_operations,
+            })(<Input placeholder="请输入英雄行动基地" />)}
+          </FormItem>
+          <FormItem label="英雄台词" {...this.formLayout}>
+            {getFieldDecorator('remark', {
+              rules: [{ required: false, message: '请输入英雄台词' }],
+              initialValue: current.remark,
+            })(<Input placeholder="请输入英雄台词" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="英雄描述">
+            {getFieldDecorator('description', {
+              rules: [{ message: '请输入英雄描述！', min: 5 }],
+              initialValue: current.description,
+            })(<TextArea rows={4} placeholder="请输入英雄描述" />)}
           </FormItem>
         </Form>
       )
     }
+
     return (
       <PageHeaderWrapper>
         <div className={styles.standardList}>
@@ -255,6 +360,14 @@ class BasicList extends PureComponent {
                     >
                       编辑
                     </a>,
+                    <a
+                      onClick={e => {
+                        e.preventDefault()
+                        this.handleRemove(item)
+                      }}
+                    >
+                      删除
+                    </a>,
                   ]}
                 >
                   <List.Item.Meta
@@ -268,7 +381,7 @@ class BasicList extends PureComponent {
           </Card>
         </div>
         <Modal
-          title={done ? null : `任务${current ? '编辑' : '添加'}`}
+          title={done ? null : `英雄${isAdd ? '添加' : '编辑'}`}
           className={styles.standardListForm}
           width={640}
           bodyStyle={done ? { padding: '72px 0' } : { padding: '28px 0 0' }}

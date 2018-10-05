@@ -37,12 +37,10 @@ export async function postHeros(payload) {
   const params = []
   for (const i in payload) {
     if (Object.prototype.hasOwnProperty.call(payload, i)) {
-      if (i !== 'id') {
-        params.push({
-          key: i,
-          value: payload[i],
-        })
-      }
+      params.push({
+        key: i,
+        value: payload[i],
+      })
     }
   }
   params.forEach(data => {
