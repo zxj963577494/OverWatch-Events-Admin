@@ -1,7 +1,21 @@
 import React, { PureComponent } from 'react'
-import { Card, Button, Form, Icon, Col, Row, DatePicker, Input, Select, Popover, Radio } from 'antd'
+import {
+  Card,
+  Button,
+  Form,
+  Icon,
+  Col,
+  Row,
+  DatePicker,
+  Input,
+  Select,
+  Popover,
+  Radio,
+  message,
+} from 'antd'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
+import moment from 'moment'
 import FooterToolbar from '@/components/FooterToolbar'
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import SocailTableForm from '@/pages/Player/SocailTableForm'
@@ -28,22 +42,33 @@ const fieldLabels = {
   heros: '擅长英雄',
 }
 
-const tableData = []
-
-@connect(({ hero, loading }) => ({
+@connect(({ hero, player, loading }) => ({
   hero,
+  player,
   submitting: loading.effects['player/submit'],
 }))
 @Form.create()
-class PlayerCreate extends PureComponent {
+class PlayerEdit extends PureComponent {
   state = {
     width: '100%',
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
+    const { dispatch, match } = this.props
+    if (!match.params.id) {
+      message.error('缺少参数：id')
+      setTimeout(() => {
+        dispatch(routerRedux.push('/player/list'))
+      }, 1500)
+    }
     dispatch({
       type: 'hero/fetchAll',
+    })
+    dispatch({
+      type: 'player/fetchById',
+      payload: {
+        id: match.params.id,
+      },
     })
     window.addEventListener('resize', this.resizeFooterToolbar, {
       passive: true,
@@ -114,13 +139,17 @@ class PlayerCreate extends PureComponent {
     const {
       form: { validateFieldsAndScroll },
       dispatch,
+      player: {
+        data: { current },
+      },
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
+        const { objectId } = current
         // submit the values
         dispatch({
           type: 'player/submit',
-          payload: values,
+          payload: { id: objectId, ...values },
           callback: () => {
             dispatch(routerRedux.push('/player/list'))
           },
@@ -134,23 +163,23 @@ class PlayerCreate extends PureComponent {
       hero: {
         data: { list },
       },
+      player: {
+        data: { current },
+      },
       form: { getFieldDecorator },
       submitting,
     } = this.props
     const { width } = this.state
 
     return (
-      <PageHeaderWrapper
-        title="新建选手"
-        content="新建选手。"
-        wrapperClassName={styles.PlayerCreate}
-      >
+      <PageHeaderWrapper title="新建选手" content="新建选手。" wrapperClassName={styles.PlayerEdit}>
         <Card title="基本信息" className={styles.card} bordered={false}>
           <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.name}>
                   {getFieldDecorator('name', {
+                    initialValue: current.name || '',
                     rules: [{ required: true, message: '请输入选手账号' }],
                   })(<Input placeholder="请输入选手账号" />)}
                 </Form.Item>
@@ -162,6 +191,7 @@ class PlayerCreate extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.familyName}>
                   {getFieldDecorator('familyName', {
+                    initialValue: current.familyName || '',
                     rules: [{ required: false, message: '请输入选手姓氏' }],
                   })(<Input style={{ width: '100%' }} placeholder="请输入选手姓氏" />)}
                 </Form.Item>
@@ -169,6 +199,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24}>
                 <Form.Item label={fieldLabels.givenName}>
                   {getFieldDecorator('givenName', {
+                    initialValue: current.givenName || '',
                     rules: [{ required: false, message: '请输入选手名字' }],
                   })(<Input style={{ width: '100%' }} placeholder="请输入选手名字" />)}
                 </Form.Item>
@@ -176,6 +207,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24}>
                 <Form.Item label={fieldLabels.birth}>
                   {getFieldDecorator('birth', {
+                    initialValue: current.birth ? moment(current.birth) : null,
                     rules: [{ required: false, message: '请选择选手生日' }],
                   })(<DatePicker style={{ width: '100%' }} placeholder="请选择选手生日" />)}
                 </Form.Item>
@@ -185,6 +217,7 @@ class PlayerCreate extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.headshot}>
                   {getFieldDecorator('headshot', {
+                    initialValue: current.headshot || '',
                     rules: [{ required: false, message: '请输入选手头像' }],
                   })(<Input style={{ width: '100%' }} placeholder="请输入选手头像" />)}
                 </Form.Item>
@@ -192,6 +225,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24}>
                 <Form.Item label={fieldLabels.pic}>
                   {getFieldDecorator('pic', {
+                    initialValue: current.pic || '',
                     rules: [{ required: false, message: '请输入选手照片' }],
                   })(<Input style={{ width: '100%' }} placeholder="请输入选手照片" />)}
                 </Form.Item>
@@ -201,6 +235,7 @@ class PlayerCreate extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.nationality}>
                   {getFieldDecorator('nationality', {
+                    initialValue: current.nationality || '',
                     rules: [{ required: false, message: '请选择选手国籍' }],
                   })(
                     <Select
@@ -224,6 +259,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24}>
                 <Form.Item label={fieldLabels.homeLocation}>
                   {getFieldDecorator('homeLocation', {
+                    initialValue: current.homeLocation || '',
                     rules: [{ required: false, message: '请输入选手籍贯' }],
                   })(<Input style={{ width: '100%' }} placeholder="请输入选手籍贯" />)}
                 </Form.Item>
@@ -237,7 +273,7 @@ class PlayerCreate extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.status}>
                   {getFieldDecorator('status', {
-                    initialValue: 'active',
+                    initialValue: current.status || 'active',
                     rules: [{ required: true, message: '请选择选手状态！' }],
                   })(
                     <RadioGroup>
@@ -254,7 +290,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24}>
                 <Form.Item label={fieldLabels.role}>
                   {getFieldDecorator('role', {
-                    initialValue: 'flex',
+                    initialValue: current.role || 'flex',
                     rules: [{ required: true, message: '请选择选手位置' }],
                   })(
                     <RadioGroup>
@@ -270,7 +306,7 @@ class PlayerCreate extends PureComponent {
               <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24}>
                 <Form.Item label={fieldLabels.heros}>
                   {getFieldDecorator('heros', {
-                    initialValue: [],
+                    initialValue: current.heros || [],
                     rules: [{ required: false, message: '请选择擅长英雄' }],
                   })(
                     <Select
@@ -297,7 +333,7 @@ class PlayerCreate extends PureComponent {
         </Card>
         <Card title="社交账号" bordered={false}>
           {getFieldDecorator('accounts', {
-            initialValue: tableData,
+            initialValue: current.accounts || [],
           })(<SocailTableForm />)}
         </Card>
         <FooterToolbar style={{ width }}>
@@ -311,4 +347,4 @@ class PlayerCreate extends PureComponent {
   }
 }
 
-export default PlayerCreate
+export default PlayerEdit

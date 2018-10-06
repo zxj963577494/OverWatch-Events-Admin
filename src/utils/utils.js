@@ -181,3 +181,9 @@ export function formatWan(val) {
 export function isAntdPro() {
   return window.location.hostname === 'preview.pro.ant.design'
 }
+
+export function bouncer(arr) {
+  return arr.filter(val => {
+    return !(!val.value || val.value === '')
+  })
+}

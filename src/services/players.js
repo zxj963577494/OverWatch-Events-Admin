@@ -1,11 +1,13 @@
 import Bmob from 'hydrogen-js-sdk'
+import { bouncer } from '@/utils/utils'
 
 export async function getPlayers() {
   const query = Bmob.Query('Player')
   return query.find()
 }
 
-export async function getPlayersById(id) {
+export async function getPlayersById(payload) {
+  const { id } = payload
   const query = Bmob.Query('Player')
   return query.get(id)
 }
@@ -43,7 +45,7 @@ export async function postPlayers(payload) {
       })
     }
   }
-  params.forEach(data => {
+  bouncer(params).forEach(data => {
     query.set(data.key, data.value)
   })
   return query.save()

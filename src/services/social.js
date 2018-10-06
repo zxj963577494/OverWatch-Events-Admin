@@ -1,17 +1,19 @@
 import Bmob from 'hydrogen-js-sdk'
 
 export async function postSocial(payload, id) {
-  const queryArray = []
+  if (payload.length > 0) {
+    const queryArray = []
 
-  payload.forEach(item => {
-    const queryObj = Bmob.Query('SocialAccount')
-    queryObj.set('playerId', id)
-    queryObj.set('account', item.account)
-    queryObj.set('url', item.url)
-    queryArray.push(queryObj)
-  })
+    payload.forEach(item => {
+      const queryObj = Bmob.Query('SocialAccount')
+      queryObj.set('playerId', id)
+      queryObj.set('account', item.account)
+      queryObj.set('url', item.url)
+      queryArray.push(queryObj)
+    })
 
-  return Bmob.Query('SocialAccount').saveAll(queryArray)
+    return Bmob.Query('SocialAccount').saveAll(queryArray)
+  }
 }
 
 export async function removeSocial(payload) {

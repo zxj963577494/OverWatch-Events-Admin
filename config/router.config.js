@@ -58,6 +58,12 @@ export default [
             name: 'create',
             component: './Player/create',
           },
+          {
+            path: '/player/edit/:id',
+            name: 'edit',
+            component: './Player/edit',
+            hideInMenu: true,
+          },
         ],
       },
       {

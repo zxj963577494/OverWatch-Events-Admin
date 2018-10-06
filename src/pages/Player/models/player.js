@@ -18,13 +18,17 @@ export default {
         currentPage: 1,
         pageSize: 10,
       },
+      current: {},
     },
   },
 
   effects: {
-    *fetchById({ payload, callback }, { call }) {
+    *fetchById({ payload }, { call, put }) {
       const response = yield call(getPlayersById, payload)
-      if (callback) callback(response)
+      yield put({
+        type: 'putCurrent',
+        payload: response,
+      })
     },
     *fetch({ payload }, { call, put, select }) {
       const _pagination = yield select(state => state.player.data.pagination)
@@ -49,9 +53,11 @@ export default {
       const { accounts } = payload
       const player = payload
       delete player.accounts
-      const response = yield call(postPlayers, player)
+      yield call(postPlayers, player)
+      debugger
       yield call(removeSocial, payload)
-      yield call(postSocial, accounts, response.objectId)
+      debugger
+      yield call(postSocial, accounts, payload.objectId)
       if (callback) {
         callback()
       }
@@ -78,6 +84,15 @@ export default {
             }
           }),
           pagination: payload.pagination,
+        },
+      }
+    },
+    putCurrent(state, { payload }) {
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          current: payload,
         },
       }
     },

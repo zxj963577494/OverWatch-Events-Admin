@@ -48,9 +48,9 @@ class BasicList extends PureComponent {
     message.success('移除成功')
   }
 
-  navigatorTo = () => {
+  navigatorTo = path => {
     const { dispatch } = this.props
-    dispatch(routerRedux.push('/player/create'))
+    dispatch(routerRedux.push(path))
   }
 
   render() {
@@ -135,7 +135,7 @@ class BasicList extends PureComponent {
               type="dashed"
               style={{ width: '100%', marginBottom: 8 }}
               icon="plus"
-              onClick={this.navigatorTo}
+              onClick={() => this.navigatorTo('/player/create')}
               ref={component => {
                 /* eslint-disable */
                 this.addBtn = findDOMNode(component)
@@ -152,7 +152,7 @@ class BasicList extends PureComponent {
               renderItem={item => (
                 <List.Item
                   actions={[
-                    <a onClick={e => {}}>编辑</a>,
+                    <a onClick={() => this.navigatorTo(`/player/edit/${item.objectId}`)}>编辑</a>,
                     <a
                       onClick={e => {
                         e.preventDefault()
