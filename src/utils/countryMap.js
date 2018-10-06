@@ -1,4 +1,5 @@
 const globalCountries = [
+  { code: 'CN', en: 'China', cn: '中国' },
   { code: 'HK', en: 'Hong Kong', cn: '香港' },
   { code: 'TW', en: 'Taiwan', cn: '台湾' },
   { code: 'MO', en: 'Macao', cn: '澳门' },
@@ -50,7 +51,6 @@ const globalCountries = [
   { code: 'CK', en: 'Cook Islands', cn: '库克群岛' },
   { code: 'CL', en: 'Chile', cn: '智利' },
   { code: 'CM', en: 'Cameroon', cn: '喀麦隆' },
-  { code: 'CN', en: 'China', cn: '中国' },
   { code: 'CO', en: 'Colombia', cn: '哥伦比亚' },
   { code: 'CR', en: 'Costa Rica', cn: '哥斯达黎加' },
   { code: 'CU', en: 'Cuba', cn: '古巴' },
