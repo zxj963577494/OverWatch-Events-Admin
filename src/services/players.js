@@ -56,3 +56,35 @@ export async function removePlayers(payload) {
   const { objectId } = payload
   return query.destroy(objectId)
 }
+
+export async function relationGetPlayersSocial(payload) {
+  const { id } = payload
+  const query = Bmob.Query('Player')
+  query.field('two', id)
+  return query.relation('SocialAccount').then(res => {
+    return res.results
+  })
+}
+
+export async function relationAddPlayersSocial(payload) {
+  const { playerId, socialIds } = payload
+  const relation = Bmob.Relation('SocialAccount')
+  const relID = relation.add(socialIds)
+  const query = Bmob.Query('Player')
+  return query.get(playerId).then(res => {
+    res.set('two', relID)
+    return res.save()
+  })
+}
+
+export async function relationRemovePlayersSocial(payload) {
+  const { playerId, socialIds } = payload
+  const relation = Bmob.Relation('SocialAccount')
+  const relID = relation.remove(socialIds)
+  const query = Bmob.Query('Player')
+  return query.get(playerId).then(res => {
+    res.set('two', relID)
+    return res.save()
+  })
+}
+

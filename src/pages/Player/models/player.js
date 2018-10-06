@@ -4,6 +4,8 @@ import {
   getTotal,
   postPlayers,
   removePlayers,
+  relationAddPlayersSocial,
+  relationGetPlayersSocial,
 } from '@/services/players'
 import { postSocial, removeSocial } from '@/services/social'
 
@@ -24,7 +26,13 @@ export default {
 
   effects: {
     *fetchById({ payload }, { call, put }) {
-      const response = yield call(getPlayersById, payload)
+      const playerResponse = yield call(getPlayersById, payload)
+      const socialResponse = yield call(relationGetPlayersSocial, payload)
+      const response = {
+        accounts: socialResponse,
+        ...playerResponse
+      }
+      debugger
       yield put({
         type: 'putCurrent',
         payload: response,
@@ -53,11 +61,14 @@ export default {
       const { accounts } = payload
       const player = payload
       delete player.accounts
-      yield call(postPlayers, player)
-      debugger
-      yield call(removeSocial, payload)
-      debugger
-      yield call(postSocial, accounts, payload.objectId)
+      const playerResponse = yield call(postPlayers, player)
+      if (accounts.length > 0) {
+        yield call(removeSocial, payload)
+        const socialResponse = yield call(postSocial, accounts, playerResponse.objectId)
+        const playerId = playerResponse.objectId
+        const socialIds = socialResponse.map(x => x.success.objectId)
+        yield call(relationAddPlayersSocial, { playerId, socialIds })
+      }
       if (callback) {
         callback()
       }
