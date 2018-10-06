@@ -44,6 +44,18 @@ export default [
         ],
       },
       {
+        path: '/player',
+        icon: 'table',
+        name: 'player',
+        routes: [
+          {
+            path: '/player/list',
+            name: 'list',
+            component: './Player/index',
+          },
+        ],
+      },
+      {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',

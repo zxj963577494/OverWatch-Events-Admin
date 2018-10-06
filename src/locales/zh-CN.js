@@ -73,6 +73,8 @@ export default {
   'menu.sport.list': '赛事列表',
   'menu.hero': '英雄',
   'menu.hero.list': '英雄列表',
+  'menu.player': '选手',
+  'menu.player.list': '选手列表',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',

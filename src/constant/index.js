@@ -5,7 +5,14 @@ export const SPORT_STATUS = [
 ]
 
 export const HERO_ROLE = [
-  { text: '坦克', value: 'tank' },
+  { text: '重装', value: 'tank' },
   { text: '输出', value: 'damage' },
   { text: '支援', value: 'support' },
+]
+
+export const PLAYER_ROLE = [
+  { text: '坦克', value: 'tank' },
+  { text: '输出', value: 'offense' },
+  { text: '支援', value: 'support' },
+  { text: '自由人', value: 'flex' },
 ]
