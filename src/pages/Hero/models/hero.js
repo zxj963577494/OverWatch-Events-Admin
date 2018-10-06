@@ -1,6 +1,7 @@
 import {
   getHerosById,
   getHerosByPage,
+  getHeros,
   getTotal,
   postHeros,
   removeHeros,
@@ -24,6 +25,16 @@ export default {
     *fetchById({ payload, callback }, { call }) {
       const response = yield call(getHerosById, payload)
       if (callback) callback(response)
+    },
+    *fetchAll(_, { call, put }) {
+      const response = yield call(getHeros)
+      yield put({
+        type: 'show',
+        payload: {
+          list: response,
+          pagination: {},
+        },
+      })
     },
     *fetch({ payload }, { call, put, select }) {
       const _pagination = yield select(state => state.hero.data.pagination)
