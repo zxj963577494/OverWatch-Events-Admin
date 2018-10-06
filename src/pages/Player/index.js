@@ -115,7 +115,7 @@ class BasicList extends PureComponent {
       <div className={styles.listContent}>
         <div className={styles.listContentItem}>
           <span>国家</span>
-          <p>{globalCountries.filter(x => x.code === nationality)[0].cn}</p>
+          <p>{nationality && globalCountries.filter(x => x.code === nationality)[0].cn}</p>
         </div>
       </div>
     )
