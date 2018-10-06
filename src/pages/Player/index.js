@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { findDOMNode } from 'react-dom'
 import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
 import { List, Card, Button, Avatar, Form, Input, message } from 'antd'
 
 import globalCountries from '@/utils/countryMap'
@@ -45,6 +46,11 @@ class BasicList extends PureComponent {
       },
     })
     message.success('移除成功')
+  }
+
+  navigatorTo = () => {
+    const { dispatch } = this.props
+    dispatch(routerRedux.push('/player/create'))
   }
 
   render() {
@@ -129,7 +135,7 @@ class BasicList extends PureComponent {
               type="dashed"
               style={{ width: '100%', marginBottom: 8 }}
               icon="plus"
-              onClick={this.showModal}
+              onClick={this.navigatorTo}
               ref={component => {
                 /* eslint-disable */
                 this.addBtn = findDOMNode(component)

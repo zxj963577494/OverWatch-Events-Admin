@@ -53,6 +53,11 @@ export default [
             name: 'list',
             component: './Player/index',
           },
+          {
+            path: '/player/create',
+            name: 'create',
+            component: './Player/create',
+          },
         ],
       },
       {

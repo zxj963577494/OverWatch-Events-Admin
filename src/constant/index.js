@@ -16,3 +16,14 @@ export const PLAYER_ROLE = [
   { text: '支援', value: 'support' },
   { text: '自由人', value: 'flex' },
 ]
+
+export const SOCIAL_ACCOUNT = [
+  { text: '微博', value: 'WEIBO' },
+  { text: '斗鱼', value: 'DOUYU' },
+  { text: '战旗', value: 'ZHANQI' },
+  { text: '虎牙', value: 'HUYA' },
+  { text: 'Twitter', value: 'TWITTER' },
+  { text: 'Facebook', value: 'FACEBOOK' },
+  { text: 'Youtube', value: 'YOUTUBE' },
+  { text: 'Twitch', value: 'TWITCH' },
+]

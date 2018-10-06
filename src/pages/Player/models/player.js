@@ -5,6 +5,7 @@ import {
   postPlayers,
   removePlayers,
 } from '@/services/players'
+import { postSocial, removeSocial } from '@/services/social'
 
 export default {
   namespace: 'player',
@@ -45,13 +46,19 @@ export default {
       })
     },
     *submit({ payload, callback }, { call }) {
-      yield call(postPlayers, payload)
+      const { accounts } = payload
+      const player = payload
+      delete player.accounts
+      const response = yield call(postPlayers, player)
+      yield call(removeSocial, payload)
+      yield call(postSocial, accounts, response.objectId)
       if (callback) {
         callback()
       }
     },
     *remove({ payload, callback }, { call }) {
       yield call(removePlayers, payload)
+      yield call(removeSocial, payload)
       if (callback) {
         callback()
       }

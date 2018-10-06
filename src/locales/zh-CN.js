@@ -75,6 +75,7 @@ export default {
   'menu.hero.list': '英雄列表',
   'menu.player': '选手',
   'menu.player.list': '选手列表',
+  'menu.player.create': '新建选手',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',
