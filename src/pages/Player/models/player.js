@@ -67,7 +67,7 @@ export default {
       })
     },
     *submit({ payload, callback }, { call }) {
-      const { accounts, heros } = payload
+      const { accounts, heroes } = payload
       const player = Object.assign({}, payload)
       delete player.accounts
       const origin = yield call(getPlayersById, payload)
@@ -81,9 +81,9 @@ export default {
           yield call(relationAddPlayersSocial, { playerId, socialIds })
         }
       }
-      if (player.id || heros.length > 0) {
-        yield call(relationRemovePlayersHero, { playerId, heroIds: origin.heros })
-        yield call(relationAddPlayersHero, { playerId, heroIds: heros })
+      if (player.id || heroes.length > 0) {
+        yield call(relationRemovePlayersHero, { playerId, heroIds: origin.heroes })
+        yield call(relationAddPlayersHero, { playerId, heroIds: heroes })
       }
       if (callback) {
         callback()

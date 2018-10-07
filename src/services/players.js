@@ -94,7 +94,7 @@ export async function relationAddPlayersHero(payload) {
   const relID = relation.add(heroIds)
   const query = Bmob.Query('Player')
   return query.get(playerId).then(res => {
-    res.set('player_heros', relID)
+    res.set('player_heroes', relID)
     return res.save()
   })
 }
@@ -105,7 +105,7 @@ export async function relationRemovePlayersHero(payload) {
   const relID = relation.remove(heroIds)
   const query = Bmob.Query('Player')
   return query.get(playerId).then(res => {
-    res.set('player_heros', relID)
+    res.set('player_heroes', relID)
     return res.save()
   })
 }

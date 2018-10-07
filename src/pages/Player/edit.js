@@ -39,7 +39,7 @@ const fieldLabels = {
   homeLocation: '籍贯',
   headshot: '头像',
   pic: '照片',
-  heros: '擅长英雄',
+  heroes: '擅长英雄',
 }
 
 @connect(({ hero, player, loading }) => ({
@@ -313,9 +313,9 @@ class PlayerEdit extends PureComponent {
                 </Form.Item>
               </Col>
               <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24}>
-                <Form.Item label={fieldLabels.heros}>
-                  {getFieldDecorator('heros', {
-                    initialValue: current.heros || [],
+                <Form.Item label={fieldLabels.heroes}>
+                  {getFieldDecorator('heroes', {
+                    initialValue: current.heroes || [],
                     rules: [{ required: false, message: '请选择擅长英雄' }],
                   })(
                     <Select

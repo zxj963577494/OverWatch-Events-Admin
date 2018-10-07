@@ -25,7 +25,7 @@ const fieldLabels = {
   homeLocation: '籍贯',
   headshot: '头像',
   pic: '照片',
-  heros: '擅长英雄',
+  heroes: '擅长英雄',
 }
 
 const tableData = []
@@ -277,8 +277,8 @@ class PlayerCreate extends PureComponent {
                 </Form.Item>
               </Col>
               <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24}>
-                <Form.Item label={fieldLabels.heros}>
-                  {getFieldDecorator('heros', {
+                <Form.Item label={fieldLabels.heroes}>
+                  {getFieldDecorator('heroes', {
                     initialValue: [],
                     rules: [{ required: false, message: '请选择擅长英雄' }],
                   })(

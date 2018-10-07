@@ -1,11 +1,11 @@
 import {
-  getHerosById,
-  getHerosByPage,
-  getHeros,
+  getHeroesById,
+  getHeroesByPage,
+  getHeroes,
   getTotal,
-  postHeros,
-  removeHeros,
-} from '@/services/heros'
+  postHeroes,
+  removeHeroes,
+} from '@/services/heroes'
 
 export default {
   namespace: 'hero',
@@ -23,11 +23,11 @@ export default {
 
   effects: {
     *fetchById({ payload, callback }, { call }) {
-      const response = yield call(getHerosById, payload)
+      const response = yield call(getHeroesById, payload)
       if (callback) callback(response)
     },
     *fetchAll(_, { call, put }) {
-      const response = yield call(getHeros)
+      const response = yield call(getHeroes)
       yield put({
         type: 'show',
         payload: {
@@ -43,7 +43,7 @@ export default {
       if (_pagination.total > total && total % page.pageSize === 0) {
         page.currentPage -= 1
       }
-      const list = yield call(getHerosByPage, payload, page)
+      const list = yield call(getHeroesByPage, payload, page)
       yield put({
         type: 'show',
         payload: {
@@ -53,13 +53,13 @@ export default {
       })
     },
     *submit({ payload, callback }, { call }) {
-      yield call(postHeros, payload)
+      yield call(postHeroes, payload)
       if (callback) {
         callback()
       }
     },
     *remove({ payload, callback }, { call }) {
-      yield call(removeHeros, payload)
+      yield call(removeHeroes, payload)
       if (callback) {
         callback()
       }

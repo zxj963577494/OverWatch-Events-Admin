@@ -1,11 +1,11 @@
 import Bmob from 'hydrogen-js-sdk'
 
-export async function getHeros() {
+export async function getHeroes() {
   const query = Bmob.Query('Hero')
   return query.find()
 }
 
-export async function getHerosById(id) {
+export async function getHeroesById(id) {
   const query = Bmob.Query('Hero')
   return query.get(id)
 }
@@ -15,7 +15,7 @@ export async function getTotal() {
   return query.count()
 }
 
-export async function getHerosByPage(payload, pagination) {
+export async function getHeroesByPage(payload, pagination) {
   const query = Bmob.Query('Hero')
 
   const { order = 'updateAt' } = payload
@@ -32,7 +32,7 @@ export async function getHerosByPage(payload, pagination) {
   return query.find()
 }
 
-export async function postHeros(payload) {
+export async function postHeroes(payload) {
   const query = Bmob.Query('Hero')
   const params = []
   for (const i in payload) {
@@ -49,7 +49,7 @@ export async function postHeros(payload) {
   return query.save()
 }
 
-export async function removeHeros(payload) {
+export async function removeHeroes(payload) {
   const query = Bmob.Query('Hero')
   const { objectId } = payload
   return query.destroy(objectId)
