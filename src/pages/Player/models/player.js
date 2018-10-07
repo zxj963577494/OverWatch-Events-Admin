@@ -49,10 +49,7 @@ export default {
         type: 'show',
         payload: {
           list,
-          pagination: {
-            ...page,
-            total,
-          },
+          pagination: page,
         },
       })
     },

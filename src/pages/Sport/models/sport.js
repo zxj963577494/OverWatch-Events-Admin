@@ -27,8 +27,8 @@ export default {
     },
     *fetch({ payload }, { call, put, select }) {
       const _pagination = yield select(state => state.sport.data.pagination)
-      const page = Object.assign({}, _pagination, payload.pagination)
       const total = yield call(getTotal)
+      const page = Object.assign({}, _pagination, payload.pagination, { total })
       if (_pagination.total > total && total % page.pageSize === 0) {
         page.currentPage -= 1
       }
@@ -37,10 +37,7 @@ export default {
         type: 'show',
         payload: {
           list,
-          pagination: {
-            ...page,
-            total,
-          },
+          pagination: page,
         },
       })
     },
