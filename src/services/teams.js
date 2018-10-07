@@ -48,6 +48,7 @@ export async function postTeams(payload) {
   bouncer(params).forEach(data => {
     query.set(data.key, data.value)
   })
+  debugger
   return query.save()
 }
 

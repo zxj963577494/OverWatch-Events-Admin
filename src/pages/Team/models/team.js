@@ -99,7 +99,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          current: payload,
+          current: { ...payload, createdTime: payload.createdTime.iso },
         },
       }
     },
