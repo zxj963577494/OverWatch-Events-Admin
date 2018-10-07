@@ -27,3 +27,15 @@ export const SOCIAL_ACCOUNT = [
   { text: 'Youtube', value: 'YOUTUBE' },
   { text: 'Twitch', value: 'TWITCH' },
 ]
+
+export const SPORT_RANK = [
+  { text: '守望先锋联赛', value: 'owl' },
+  { text: '守望先锋挑战者系列赛', value: 'oc' },
+  { text: '守望先锋公开争霸赛', value: 'owod' },
+  { text: '其他', value: 'other' },
+]
+
+export const TEAM_STATUS = [
+  { text: '活跃', value: 'active', status: 'processing' },
+  { text: '解散', value: 'dissolve', status: 'error' },
+]

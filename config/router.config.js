@@ -67,6 +67,29 @@ export default [
         ],
       },
       {
+        path: '/team',
+        icon: 'table',
+        name: 'team',
+        routes: [
+          {
+            path: '/team/list',
+            name: 'list',
+            component: './Team/index',
+          },
+          {
+            path: '/team/create',
+            name: 'create',
+            component: './Team/create',
+          },
+          {
+            path: '/team/edit/:id',
+            name: 'edit',
+            component: './Team/edit',
+            hideInMenu: true,
+          },
+        ],
+      },
+      {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
