@@ -67,22 +67,22 @@ export async function relationGetTeamsSocial(payload) {
 }
 
 export async function relationAddTeamsSocial(payload) {
-  const { playerId, socialIds } = payload
+  const { teamId, socialIds } = payload
   const relation = Bmob.Relation('SocialAccount')
   const relID = relation.add(socialIds)
   const query = Bmob.Query('Team')
-  return query.get(playerId).then(res => {
+  return query.get(teamId).then(res => {
     res.set('two', relID)
     return res.save()
   })
 }
 
 export async function relationRemoveTeamsSocial(payload) {
-  const { playerId, socialIds } = payload
+  const { teamId, socialIds } = payload
   const relation = Bmob.Relation('SocialAccount')
   const relID = relation.remove(socialIds)
   const query = Bmob.Query('Team')
-  return query.get(playerId).then(res => {
+  return query.get(teamId).then(res => {
     res.set('two', relID)
     return res.save()
   })

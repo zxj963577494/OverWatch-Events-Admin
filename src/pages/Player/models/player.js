@@ -1,6 +1,7 @@
 import {
   getPlayersById,
   getPlayersByPage,
+  getPlayers,
   getTotal,
   postPlayers,
   removePlayers,
@@ -35,6 +36,16 @@ export default {
       yield put({
         type: 'putCurrent',
         payload: response,
+      })
+    },
+    *fetchAll(_, { call, put }) {
+      const response = yield call(getPlayers)
+      yield put({
+        type: 'show',
+        payload: {
+          list: response,
+          pagination: {},
+        },
       })
     },
     *fetch({ payload }, { call, put, select }) {
