@@ -1,4 +1,5 @@
 const globalCountries = [
+  { code: 'UK', en: 'UnKown', cn: '未知' },
   { code: 'CN', en: 'China', cn: '中国' },
   { code: 'HK', en: 'Hong Kong', cn: '香港' },
   { code: 'TW', en: 'Taiwan', cn: '台湾' },

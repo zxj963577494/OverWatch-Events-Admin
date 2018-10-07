@@ -101,6 +101,7 @@ class SocailTableForm extends PureComponent {
         return
       }
       const target = this.getRowByKey(key) || {}
+      target.account = target.account || 'WEIBO'
       if (!target.account || !target.url) {
         message.error('请填写完整社交信息。')
         e.target.focus()
@@ -150,7 +151,7 @@ class SocailTableForm extends PureComponent {
                 showSearch
                 style={{ width: '100%' }}
                 placeholder="请选择社交类型"
-                value={text}
+                value={text || 'WEIBO'}
                 onChange={e => this.handleFieldChange(e, 'account', record.key)}
                 optionFilterProp="children"
                 filterOption={(input, option) =>
@@ -172,7 +173,7 @@ class SocailTableForm extends PureComponent {
         title: '地址',
         dataIndex: 'url',
         key: 'url',
-        width: '30%',
+        width: '50%',
         render: (text, record) => {
           if (record.editable) {
             return (

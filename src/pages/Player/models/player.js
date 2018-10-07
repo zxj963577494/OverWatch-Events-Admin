@@ -30,9 +30,8 @@ export default {
       const socialResponse = yield call(relationGetPlayersSocial, payload)
       const response = {
         accounts: socialResponse,
-        ...playerResponse
+        ...playerResponse,
       }
-      debugger
       yield put({
         type: 'putCurrent',
         payload: response,
@@ -40,8 +39,8 @@ export default {
     },
     *fetch({ payload }, { call, put, select }) {
       const _pagination = yield select(state => state.player.data.pagination)
-      const page = Object.assign({}, _pagination, payload.pagination)
       const total = yield call(getTotal)
+      const page = Object.assign({}, _pagination, payload.pagination, { total })
       if (_pagination.total > total && total % page.pageSize === 0) {
         page.currentPage -= 1
       }
@@ -62,10 +61,10 @@ export default {
       const player = payload
       delete player.accounts
       const playerResponse = yield call(postPlayers, player)
+      const playerId = playerResponse.objectId || player.id
       if (accounts.length > 0) {
         yield call(removeSocial, payload)
-        const socialResponse = yield call(postSocial, accounts, playerResponse.objectId)
-        const playerId = playerResponse.objectId
+        const socialResponse = yield call(postSocial, accounts, playerId)
         const socialIds = socialResponse.map(x => x.success.objectId)
         yield call(relationAddPlayersSocial, { playerId, socialIds })
       }

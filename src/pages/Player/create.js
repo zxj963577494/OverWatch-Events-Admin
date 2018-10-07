@@ -201,6 +201,7 @@ class PlayerCreate extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.nationality}>
                   {getFieldDecorator('nationality', {
+                    initialValue: 'UK',
                     rules: [{ required: false, message: '请选择选手国籍' }],
                   })(
                     <Select

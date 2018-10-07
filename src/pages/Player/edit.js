@@ -172,7 +172,7 @@ class PlayerEdit extends PureComponent {
     const { width } = this.state
 
     return (
-      <PageHeaderWrapper title="新建选手" content="新建选手。" wrapperClassName={styles.PlayerEdit}>
+      <PageHeaderWrapper title="编辑选手" content="编辑选手。" wrapperClassName={styles.PlayerEdit}>
         <Card title="基本信息" className={styles.card} bordered={false}>
           <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
@@ -235,7 +235,7 @@ class PlayerEdit extends PureComponent {
               <Col lg={6} md={12} sm={24}>
                 <Form.Item label={fieldLabels.nationality}>
                   {getFieldDecorator('nationality', {
-                    initialValue: current.nationality || '',
+                    initialValue: current.nationality || 'UK',
                     rules: [{ required: false, message: '请选择选手国籍' }],
                   })(
                     <Select
