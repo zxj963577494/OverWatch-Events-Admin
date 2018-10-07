@@ -48,7 +48,6 @@ export async function postTeams(payload) {
   bouncer(params).forEach(data => {
     query.set(data.key, data.value)
   })
-  debugger
   return query.save()
 }
 
@@ -61,7 +60,7 @@ export async function removeTeams(payload) {
 export async function relationGetTeamsSocial(payload) {
   const { id } = payload
   const query = Bmob.Query('Team')
-  query.field('two', id)
+  query.field('teams_socials', id)
   return query.relation('SocialAccount').then(res => {
     return res.results
   })
@@ -73,7 +72,7 @@ export async function relationAddTeamsSocial(payload) {
   const relID = relation.add(socialIds)
   const query = Bmob.Query('Team')
   return query.get(teamId).then(res => {
-    res.set('two', relID)
+    res.set('teams_socials', relID)
     return res.save()
   })
 }
@@ -84,8 +83,29 @@ export async function relationRemoveTeamsSocial(payload) {
   const relID = relation.remove(socialIds)
   const query = Bmob.Query('Team')
   return query.get(teamId).then(res => {
-    res.set('two', relID)
+    res.set('teams_socials', relID)
     return res.save()
   })
 }
 
+export async function relationAddTeamsPlayer(payload) {
+  const { teamId, playerIds } = payload
+  const relation = Bmob.Relation('Player')
+  const relID = relation.add(playerIds)
+  const query = Bmob.Query('Team')
+  return query.get(teamId).then(res => {
+    res.set('team_players', relID)
+    return res.save()
+  })
+}
+
+export async function relationRemoveTeamsPlayer(payload) {
+  const { teamId, playerIds } = payload
+  const relation = Bmob.Relation('Player')
+  const relID = relation.remove(playerIds)
+  const query = Bmob.Query('Team')
+  return query.get(teamId).then(res => {
+    res.set('team_players', relID)
+    return res.save()
+  })
+}

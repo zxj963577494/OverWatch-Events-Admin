@@ -12,7 +12,7 @@ export async function postSocial(payload, id) {
     })
     return Bmob.Query('SocialAccount').saveAll(queryArray)
   }
-  return {}
+  return false
 }
 
 export async function removeSocial(payload) {

@@ -6,6 +6,8 @@ import {
   removeTeams,
   relationAddTeamsSocial,
   relationGetTeamsSocial,
+  relationAddTeamsPlayer,
+  relationRemoveTeamsPlayer,
 } from '@/services/teams'
 import { postSocial, removeSocial } from '@/services/social'
 
@@ -54,16 +56,23 @@ export default {
       })
     },
     *submit({ payload, callback }, { call }) {
-      const { accounts } = payload
+      const { accounts, players } = payload
       const team = Object.assign({}, payload)
       delete team.accounts
+      const origin = yield call(getTeamsById, payload)
       const teamResponse = yield call(postTeams, team)
       const teamId = teamResponse.objectId || team.id
-      if (accounts.length > 0) {
+      if (team.id || accounts.length > 0) {
         yield call(removeSocial, payload)
         const socialResponse = yield call(postSocial, accounts, teamId)
-        const socialIds = socialResponse.map(x => x.success.objectId)
-        yield call(relationAddTeamsSocial, { teamId, socialIds })
+        if (socialResponse) {
+          const socialIds = socialResponse.map(x => x.success.objectId)
+          yield call(relationAddTeamsSocial, { teamId, socialIds })
+        }
+      }
+      if (team.id || players.length > 0) {
+        yield call(relationRemoveTeamsPlayer, { teamId, playerIds: origin.players })
+        yield call(relationAddTeamsPlayer, { teamId, playerIds: players })
       }
       if (callback) {
         callback()
