@@ -117,10 +117,18 @@ class PlayerCreate extends PureComponent {
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
-        // submit the values
+        const payload = values.birth
+          ? {
+              ...values,
+              birth: {
+                __type: 'Date',
+                iso: values.birth.format('YYYY-MM-DD HH:mm:ss'),
+              },
+            }
+          : { ...values }
         dispatch({
           type: 'player/submit',
-          payload: values,
+          payload,
           callback: () => {
             dispatch(routerRedux.push('/player/list'))
           },

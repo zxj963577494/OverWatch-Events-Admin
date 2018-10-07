@@ -146,10 +146,19 @@ class PlayerEdit extends PureComponent {
     validateFieldsAndScroll((error, values) => {
       if (!error) {
         const { objectId } = current
-        // submit the values
+        const payload = values.birth
+          ? {
+              id: objectId,
+              ...values,
+              birth: {
+                __type: 'Date',
+                iso: values.birth.format('YYYY-MM-DD HH:mm:ss'),
+              },
+            }
+          : { id: objectId, ...values }
         dispatch({
           type: 'player/submit',
-          payload: { id: objectId, ...values },
+          payload,
           callback: () => {
             dispatch(routerRedux.push('/player/list'))
           },

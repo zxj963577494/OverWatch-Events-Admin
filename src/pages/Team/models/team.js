@@ -55,7 +55,7 @@ export default {
     },
     *submit({ payload, callback }, { call }) {
       const { accounts } = payload
-      const team = payload
+      const team = Object.assign({}, payload)
       delete team.accounts
       const teamResponse = yield call(postTeams, team)
       const teamId = teamResponse.objectId || team.id
@@ -99,7 +99,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          current: { ...payload, createdTime: payload.createdTime.iso },
+          current: { ...payload, createdTime: payload.createdTime && payload.createdTime.iso },
         },
       }
     },

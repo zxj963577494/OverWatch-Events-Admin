@@ -33,8 +33,6 @@ const fieldLabels = {
   players: '成员',
 }
 
-const tableData = []
-
 @connect(({ loading, player }) => ({
   player,
   submitting: loading.effects['team/submit'],
@@ -123,9 +121,18 @@ class TeamCreate extends PureComponent {
     validateFieldsAndScroll((error, values) => {
       if (!error) {
         // submit the values
+        const payload = values.createdTime
+          ? {
+              ...values,
+              createdTime: {
+                __type: 'Date',
+                iso: values.createdTime.format('YYYY-MM-DD HH:mm:ss'),
+              },
+            }
+          : { ...values }
         dispatch({
           type: 'team/submit',
-          payload: values,
+          payload,
           callback: () => {
             dispatch(routerRedux.push('/team/list'))
           },
@@ -319,7 +326,7 @@ class TeamCreate extends PureComponent {
         </Card>
         <Card title="社交账号" bordered={false}>
           {getFieldDecorator('accounts', {
-            initialValue: tableData,
+            initialValue: [],
           })(<SocailTableForm />)}
         </Card>
         <FooterToolbar style={{ width }}>

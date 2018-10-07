@@ -153,16 +153,19 @@ class TeamEdit extends PureComponent {
     validateFieldsAndScroll((error, values) => {
       if (!error) {
         const { objectId } = current
+        const payload = values.createdTime
+          ? {
+              id: objectId,
+              ...values,
+              createdTime: {
+                __type: 'Date',
+                iso: values.createdTime.format('YYYY-MM-DD HH:mm:ss'),
+              },
+            }
+          : { id: objectId, ...values }
         dispatch({
           type: 'team/submit',
-          payload: {
-            id: objectId,
-            ...values,
-            createdTime: {
-              __type: 'Date',
-              iso: values.createdTime.format('YYYY-MM-DD HH:mm:ss'),
-            },
-          },
+          payload,
           callback: () => {
             dispatch(routerRedux.push('/team/list'))
           },
