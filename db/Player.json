@@ -6,7 +6,9 @@
     "familyName": "Tejedor Rua",
     "givenName": "Jonathan",
     "nationality": "ES",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/X4JKRJUUAKYH1512685113279.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/X4JKRJUUAKYH1512685113279.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "akm.8009",
@@ -15,7 +17,9 @@
     "familyName": "Bignet",
     "givenName": "Dylan",
     "nationality": "FR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/17YL9H3E19LG1519254438451.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/17YL9H3E19LG1519254438451.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "rascal.6075",
@@ -24,7 +28,9 @@
     "familyName": "Kim",
     "givenName": "Dong-Jun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/N1IR0K75HXIJ1519254438451.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/N1IR0K75HXIJ1519254438451.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "xqc.5019",
@@ -33,7 +39,9 @@
     "familyName": "Lengyel",
     "givenName": "Félix",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4TUBG7W23UYA1512685113511.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4TUBG7W23UYA1512685113511.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "taimou.6010",
@@ -42,7 +50,9 @@
     "familyName": "Kettunen",
     "givenName": "Timo",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/J3ZGE7V0A88P1512685113545.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/J3ZGE7V0A88P1512685113545.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "custa.8424",
@@ -51,7 +61,9 @@
     "familyName": "Kennedy",
     "givenName": "Scott",
     "nationality": "AU",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EAFHSM3FQA9N1512685112987.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EAFHSM3FQA9N1512685112987.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "chipshajen.7670",
@@ -60,7 +72,9 @@
     "familyName": "Widlund",
     "givenName": "Sebastian",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NSLR4T063K361512685112947.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NSLR4T063K361512685112947.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mickie.1201",
@@ -69,7 +83,9 @@
     "familyName": "Rattanasangchod",
     "givenName": "Pongphop",
     "nationality": "TH",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/TMOFUY1T8UKJ1512685113280.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/TMOFUY1T8UKJ1512685113280.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "seagull.3606",
@@ -78,7 +94,9 @@
     "familyName": "Larned",
     "givenName": "Brandon",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9OBOEB2LXGOP1512685113530.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9OBOEB2LXGOP1512685113530.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "cocco.5772",
@@ -87,7 +105,9 @@
     "familyName": "Jonsson",
     "givenName": "Christian",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XXLO6MSM8ENO1512685112952.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XXLO6MSM8ENO1512685112952.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "effect.6823",
@@ -96,7 +116,9 @@
     "familyName": "Hwang",
     "givenName": "Hyeon",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BSOW4XNW20CS1512685113260.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BSOW4XNW20CS1512685113260.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "joemeister.7402",
@@ -105,7 +127,9 @@
     "familyName": "Gramano",
     "givenName": "Joseph",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XD8KBKYLHJ3R1515621286382.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XD8KBKYLHJ3R1515621286382.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "boombox.8041",
@@ -114,7 +138,9 @@
     "familyName": "Charles",
     "givenName": "Isaac",
     "nationality": "GB",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/JHRCXX6XSYML1515621286136.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/JHRCXX6XSYML1515621286136.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "carpe.7398",
@@ -123,7 +149,9 @@
     "familyName": "Lee",
     "givenName": "Jae-Hyeok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/45JECTBHIE2M1515621286179.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/45JECTBHIE2M1515621286179.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "snillo.5859",
@@ -132,7 +160,9 @@
     "familyName": "Ekström",
     "givenName": "Simon",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fragi.6018",
@@ -141,7 +171,9 @@
     "familyName": "Laine",
     "givenName": "Joona",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/Q1UDN2ME09O31515702582682.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/Q1UDN2ME09O31515702582682.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "eqo.8442",
@@ -150,7 +182,9 @@
     "familyName": "Corona",
     "givenName": "Josue ",
     "nationality": "IL",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "shadowburn.7855",
@@ -159,7 +193,9 @@
     "familyName": "Gushcha",
     "givenName": "Georgii",
     "nationality": "RU",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/08BQ9B93UZMA1515702582681.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/08BQ9B93UZMA1515702582681.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "neptuno.8598",
@@ -168,7 +204,9 @@
     "familyName": "González Molinillo",
     "givenName": "Alberto",
     "nationality": "ES",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FIEF1OGE25C91515702582688.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FIEF1OGE25C91515702582688.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "dayfly.5286",
@@ -177,7 +215,9 @@
     "familyName": "Park",
     "givenName": "Jeong-Hwan",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FAODQTXYDOYD1515621286309.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FAODQTXYDOYD1515621286309.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "hotba.8049",
@@ -186,7 +226,9 @@
     "familyName": "Choi",
     "givenName": "Hong-Jun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1Y5VYS7ZEVDS1515621286333.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1Y5VYS7ZEVDS1515621286333.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "poko.6448",
@@ -195,7 +237,9 @@
     "familyName": "Gouzerch",
     "givenName": "Gael",
     "nationality": "FR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EZQ4D59G4VKH1515621286468.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EZQ4D59G4VKH1515621286468.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "ddeu-yong.1036",
@@ -204,7 +248,9 @@
     "familyName": "Kim",
     "givenName": "Su-Min",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "muma.6529",
@@ -213,7 +259,9 @@
     "familyName": "Wilmot",
     "givenName": "Austin",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YIFKW875KSEP1512616495363.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YIFKW875KSEP1512616495363.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "bani.1657",
@@ -222,7 +270,9 @@
     "familyName": "Benell",
     "givenName": "Christopher",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WZHWZFR98J771512616494889.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WZHWZFR98J771512616494889.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "clockwork.7508",
@@ -231,7 +281,9 @@
     "familyName": "Dias",
     "givenName": "Matthew",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XZ5K8UN67KS11512616494899.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XZ5K8UN67KS11512616494899.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mendokusaii.1707",
@@ -240,7 +292,9 @@
     "familyName": "Håkansson",
     "givenName": "Lucas",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/56GKIKO2Q0E41512616495373.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/56GKIKO2Q0E41512616495373.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "boink.8793",
@@ -249,7 +303,9 @@
     "familyName": "Pence",
     "givenName": "Daniel",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ULB4T6MH7R381512616494895.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ULB4T6MH7R381512616494895.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "linkzr.6614",
@@ -258,7 +314,9 @@
     "familyName": "Masalin",
     "givenName": "Jiri",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D5446VCUXNMX1512616495110.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D5446VCUXNMX1512616495110.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "spree.6245",
@@ -267,7 +325,9 @@
     "familyName": "Vanhomwegen",
     "givenName": "Alexandre",
     "nationality": "BE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NBP2HF8SW2LQ1512616495543.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NBP2HF8SW2LQ1512616495543.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "rawkus.2238",
@@ -276,7 +336,9 @@
     "familyName": "Flaherty",
     "givenName": "Shane",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/DMM5P90VN9SX1512616495367.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/DMM5P90VN9SX1512616495367.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "jake.3203",
@@ -285,7 +347,9 @@
     "familyName": "Lyon",
     "givenName": "Jake",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D73OIHS7JU5O1512616495099.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D73OIHS7JU5O1512616495099.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "coolmatt69.4049",
@@ -294,7 +358,9 @@
     "familyName": "Iorio",
     "givenName": "Matt",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3LZO7TZS1N9M1512616495074.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3LZO7TZS1N9M1512616495074.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "dreamkazper.9816",
@@ -303,7 +369,9 @@
     "familyName": "Sanchez",
     "givenName": "Jonathan",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QBAODIONXUU31512769819622.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QBAODIONXUU31512769819622.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "snow.4507",
@@ -312,7 +380,9 @@
     "familyName": "Yohannes",
     "givenName": "Mikias",
     "nationality": "ET",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D8ZAQFT98UTD1512769820007.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D8ZAQFT98UTD1512769820007.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "gamsu.3438",
@@ -321,7 +391,9 @@
     "familyName": "Noh",
     "givenName": "YoungJin",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/HSZTNWL85J5J1512769819629.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/HSZTNWL85J5J1512769819629.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "note.6771",
@@ -330,7 +402,9 @@
     "familyName": "Meissner",
     "givenName": "Lucas",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ZAVAW7C7SJIL1512769819984.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ZAVAW7C7SJIL1512769819984.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "neko.5865",
@@ -339,7 +413,9 @@
     "familyName": "Park",
     "givenName": "SeHyun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/TZ8DWCLINMZS1512769820004.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/TZ8DWCLINMZS1512769820004.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "avast.6038",
@@ -348,7 +424,9 @@
     "familyName": "Prince",
     "givenName": "Connor",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QXCMYNUTGPRL1512769819625.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QXCMYNUTGPRL1512769819625.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "striker.5893",
@@ -357,7 +435,9 @@
     "familyName": "Gwon",
     "givenName": "Nam-Ju",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/F930WFVYVE601512769820260.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/F930WFVYVE601512769820260.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "kalios.2971",
@@ -366,7 +446,9 @@
     "familyName": "Shin",
     "givenName": "WooYul",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/DPNHA5GMIH3J1512769819813.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/DPNHA5GMIH3J1512769819813.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mistakes.9897",
@@ -375,7 +457,9 @@
     "familyName": "Danilov",
     "givenName": "Stanislav",
     "nationality": "RU",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LN1C7SYE7GX81512769819823.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LN1C7SYE7GX81512769819823.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "kellex.9495",
@@ -384,7 +468,9 @@
     "familyName": "Keller",
     "givenName": "Kristian",
     "nationality": "DK",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PS2G0TUUT9Z81512769819827.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PS2G0TUUT9Z81512769819827.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "saebyeolbe.6560",
@@ -393,7 +479,9 @@
     "familyName": "Park",
     "givenName": "Jong-Ryeol",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/U38D6YQ3CHOO1512686065514.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/U38D6YQ3CHOO1512686065514.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mek0.1853",
@@ -402,7 +490,9 @@
     "familyName": "Kim",
     "givenName": "Tae-Hong",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/399EAIKL0YAB1512686065274.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/399EAIKL0YAB1512686065274.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "pine.1647",
@@ -411,7 +501,9 @@
     "familyName": "Kim",
     "givenName": "Do-Hyeon",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BBANQ2BHFL0Y1512686065493.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BBANQ2BHFL0Y1512686065493.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "janus.7030",
@@ -420,7 +512,9 @@
     "familyName": "Song",
     "givenName": "Jun-Hwa",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ML4KPZZ8FTRT1512686064886.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ML4KPZZ8FTRT1512686064886.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "jjonak.8711",
@@ -429,7 +523,9 @@
     "familyName": "Bang",
     "givenName": "Seong-Hyun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3O7YIBU0Z6W61512686064910.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3O7YIBU0Z6W61512686064910.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mano.1522",
@@ -438,7 +534,9 @@
     "familyName": "Kim",
     "givenName": "Dong-Gyu",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/V1YNOWR1LEWJ1512686065135.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/V1YNOWR1LEWJ1512686065135.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "libero.2398",
@@ -447,7 +545,9 @@
     "familyName": "Kim",
     "givenName": "Hae-Seong",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SATARK69GT121512686065257.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SATARK69GT121512686065257.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "ark.2298",
@@ -456,7 +556,9 @@
     "familyName": "Hong",
     "givenName": "Yeon-Jun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4RJW3F79LGWX1512686064840.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4RJW3F79LGWX1512686064840.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "super.6832",
@@ -465,7 +567,9 @@
     "familyName": "DeLisi",
     "givenName": "Matthew",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YUQL4VLXE7PX1512777247831.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YUQL4VLXE7PX1512777247831.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "babybay.7271",
@@ -474,7 +578,9 @@
     "familyName": "Francisty",
     "givenName": "Andrej",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/U9QK0OYK87F01512777246945.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/U9QK0OYK87F01512777246945.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "sinatraa.3257",
@@ -483,7 +589,9 @@
     "familyName": "Won",
     "givenName": "Jay",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/GAH625QTQPGC1512777247784.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/GAH625QTQPGC1512777247784.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "leepy.5762",
@@ -492,7 +600,9 @@
     "familyName": "Andrews",
     "givenName": "Nikola",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YWYMSL7EOA951512777247847.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YWYMSL7EOA951512777247847.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "danteh.8452",
@@ -501,7 +611,9 @@
     "familyName": "Cruz",
     "givenName": "Dante",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FD9N9OR9YO7L1512777246926.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/FD9N9OR9YO7L1512777246926.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "dhak.8567",
@@ -510,7 +622,9 @@
     "familyName": "Martinez Paz",
     "givenName": "Daniel",
     "nationality": "ES",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4Q3H9T4BPAR21512777246918.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4Q3H9T4BPAR21512777246918.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "nomy.1216",
@@ -519,7 +633,9 @@
     "familyName": "Lizarraga Ramirez Osmar",
     "givenName": "David",
     "nationality": "MX",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NFY3Y5MRRO951512777247574.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NFY3Y5MRRO951512777247574.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "iddqd.9839",
@@ -528,7 +644,9 @@
     "familyName": "Dahlström",
     "givenName": "André",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WSFQZ1R6LCJ31512777247534.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WSFQZ1R6LCJ31512777247534.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "nevix.5457",
@@ -537,7 +655,9 @@
     "familyName": "Karlsson",
     "givenName": "Andreas",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QCO0N7H8SQFT1512777247525.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/QCO0N7H8SQFT1512777247525.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "silkthread.9968",
@@ -546,7 +666,9 @@
     "familyName": "Wang",
     "givenName": "Ted",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WZ8MLSBXCD6E1512776701242.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/WZ8MLSBXCD6E1512776701242.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "grimreality.4793",
@@ -555,7 +677,9 @@
     "familyName": "Schaefer",
     "givenName": "Christopher",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4HL7NR9URCMU1512776701054.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4HL7NR9URCMU1512776701054.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "kariv.3355",
@@ -564,7 +688,9 @@
     "familyName": "Park",
     "givenName": "Young-Seo",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/6QOV26CVECXE1512776701055.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/6QOV26CVECXE1512776701055.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fate.1459",
@@ -573,7 +699,9 @@
     "familyName": "Koo",
     "givenName": "Pan-Seung",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3SWJQYWMYTV11512776700780.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3SWJQYWMYTV11512776700780.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "verbo.6137",
@@ -582,7 +710,9 @@
     "familyName": "Disalvo",
     "givenName": "Stefano",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/GB1BRHQZ4CLL1512776701508.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/GB1BRHQZ4CLL1512776701508.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "envy.3537",
@@ -591,7 +721,9 @@
     "familyName": "Lee",
     "givenName": "Kang-Jae",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/6FAQKR0XRZ821512776700785.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/6FAQKR0XRZ821512776700785.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "space.7513",
@@ -600,7 +732,9 @@
     "familyName": "Halpern",
     "givenName": "Indy",
     "nationality": "US",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BP0XDXDMWZ421512776701354.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BP0XDXDMWZ421512776701354.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "numlocked.8944",
@@ -609,7 +743,9 @@
     "familyName": "Barton",
     "givenName": "Sebastian",
     "nationality": "GB",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/H4XYM23GR1061512776701073.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/H4XYM23GR1061512776701073.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "unkoe.9342",
@@ -618,7 +754,9 @@
     "familyName": "Chevasson",
     "givenName": "Benjamin",
     "nationality": "FR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/AAKTVQLMQ0IZ1512776701428.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/AAKTVQLMQ0IZ1512776701428.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "agilities.5443",
@@ -627,7 +765,9 @@
     "familyName": "Girardi",
     "givenName": "Brady",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/47PKEMP7FWAQ1512776700755.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/47PKEMP7FWAQ1512776700755.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "soon.8087",
@@ -636,7 +776,9 @@
     "familyName": "Tarlier",
     "givenName": "Terence",
     "nationality": "FR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/E29MO86JEHJD1512776701352.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/E29MO86JEHJD1512776701352.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "kris.6597",
@@ -645,7 +787,9 @@
     "familyName": "Choi",
     "givenName": "Jun-Sung",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EDZHIK5WC0IK1512769977222.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EDZHIK5WC0IK1512769977222.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "surefour.7524",
@@ -654,7 +798,9 @@
     "familyName": "Roberts",
     "givenName": "Lane",
     "nationality": "CA",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/JQ2S2QRB0QCM1512769977581.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/JQ2S2QRB0QCM1512769977581.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "iremiix.5381",
@@ -663,7 +809,9 @@
     "familyName": "Galarza Figueroa",
     "givenName": "Luis",
     "nationality": "PR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/KA2YMLHN9WL61512769977429.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/KA2YMLHN9WL61512769977429.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fissure.5068",
@@ -672,7 +820,9 @@
     "familyName": "Baek",
     "givenName": "Chan-Hyung",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9VI2CD4PUER91519254438519.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9VI2CD4PUER91519254438519.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "bischu.8394",
@@ -681,7 +831,9 @@
     "familyName": "Kim",
     "givenName": "Aaron",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/02EPNXS6PRM71512769977245.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/02EPNXS6PRM71512769977245.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "shaz.9014",
@@ -690,7 +842,9 @@
     "familyName": "Suovaara",
     "givenName": "Jonas Samuel",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/V4HSZKOHJGN21512769977468.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/V4HSZKOHJGN21512769977468.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "hydration.7861",
@@ -699,7 +853,9 @@
     "familyName": "Veloso de Goes Telles",
     "givenName": "Joao Pedro",
     "nationality": "BR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/CGG5VB9U5MLQ1512769977402.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/CGG5VB9U5MLQ1512769977402.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "bigg00se.5792",
@@ -708,7 +864,9 @@
     "familyName": "Isohanni",
     "givenName": "Benjamin Ville Aapeli",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1OSV4XRC5PTK1512769977242.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1OSV4XRC5PTK1512769977242.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "zappis.8607",
@@ -717,7 +875,9 @@
     "familyName": "Alakurtti",
     "givenName": "Joonas",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "manneten.4062",
@@ -726,7 +886,9 @@
     "familyName": "Bylund",
     "givenName": "Tim",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YZNUNFMFABFG1512685744491.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YZNUNFMFABFG1512685744491.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "logix.7408",
@@ -735,7 +897,9 @@
     "familyName": "Berghmans",
     "givenName": "Andreas",
     "nationality": "BE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NM3N1A0TI6BS1512685744563.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NM3N1A0TI6BS1512685744563.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "zebbosai.4278",
@@ -744,7 +908,9 @@
     "familyName": "Olsson",
     "givenName": "Sebastian",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/0RCI51ST0GU01512685744788.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/0RCI51ST0GU01512685744788.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "cwoosh.9365",
@@ -753,7 +919,9 @@
     "familyName": "Klingestedt",
     "givenName": "Johan",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/RPHC99GZV5YT1512685744459.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/RPHC99GZV5YT1512685744459.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "tviq.2926",
@@ -762,7 +930,9 @@
     "familyName": "Lindström",
     "givenName": "Kevin",
     "nationality": "SE",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/L76ZWRFRYTN21512685744749.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/L76ZWRFRYTN21512685744749.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "zuppehw.6381",
@@ -771,7 +941,9 @@
     "familyName": "Kuntsi",
     "givenName": "Aleksi",
     "nationality": "FI",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/7NQZMZ9MX2FU1512685744843.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/7NQZMZ9MX2FU1512685744843.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "geguri.9297",
@@ -780,7 +952,9 @@
     "familyName": "Kim",
     "givenName": "Seyeon",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4r/4RG73ZY73BKX1518723521502.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4r/4RG73ZY73BKX1518723521502.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "undead.7323",
@@ -789,7 +963,9 @@
     "familyName": "方",
     "givenName": "超",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1KD69B4YVFP81515621286543.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1KD69B4YVFP81515621286543.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "mg.4095",
@@ -798,7 +974,9 @@
     "familyName": "吴",
     "givenName": "董健",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/mf/MFLQTBNY2LX11513192329151.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/mf/MFLQTBNY2LX11513192329151.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "roshan.1861",
@@ -807,7 +985,9 @@
     "familyName": "井",
     "givenName": "文豪",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XBXZYVNUO09L1512685931234.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/XBXZYVNUO09L1512685931234.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "diya.8292",
@@ -816,7 +996,9 @@
     "familyName": "路",
     "givenName": "炜达",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UDE4PWA3KRBC1512685930909.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UDE4PWA3KRBC1512685930909.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "freefeel.9390",
@@ -825,7 +1007,9 @@
     "familyName": "徐",
     "givenName": "珮瑄",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D0O2D6DBHZEQ1515621286478.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/D0O2D6DBHZEQ1515621286478.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "xushu.3085",
@@ -834,7 +1018,9 @@
     "familyName": "刘",
     "givenName": "俊杰",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PBWFKWMQ5A861512685931434.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PBWFKWMQ5A861512685931434.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fiveking.7474",
@@ -843,7 +1029,9 @@
     "familyName": "陈",
     "givenName": "昭宇",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ASXO7K4P2DBD1512685931016.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ASXO7K4P2DBD1512685931016.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "altering.1480",
@@ -852,7 +1040,9 @@
     "familyName": "程",
     "givenName": "雅各",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YUEOR3ORCY5E1512685930834.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YUEOR3ORCY5E1512685930834.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "ado.1587",
@@ -861,7 +1051,9 @@
     "familyName": "Chon",
     "givenName": "Gihyeon",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "sky.7031",
@@ -870,7 +1062,9 @@
     "familyName": "He",
     "givenName": "Junjian",
     "nationality": "CN",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fearless.9778",
@@ -879,7 +1073,9 @@
     "familyName": "Lee",
     "givenName": "Eui-Seok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/S02042JXNHF81515718127993.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "bunny.8066",
@@ -888,7 +1084,9 @@
     "familyName": "Chae",
     "givenName": "Jun-Hyeok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/8VVBZ6TJQZL41512770127850.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/8VVBZ6TJQZL41512770127850.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "miro.3293",
@@ -897,7 +1095,9 @@
     "familyName": "Gong ",
     "givenName": "Jin-Hyuk",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LTXC1UP8RPNW1512770128083.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LTXC1UP8RPNW1512770128083.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "xepher.4082",
@@ -906,7 +1106,9 @@
     "familyName": "Koo",
     "givenName": "Jae-Mo",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LYMK8TUOQSWN1512770128515.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LYMK8TUOQSWN1512770128515.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "gido.9607",
@@ -915,7 +1117,9 @@
     "familyName": "Moon ",
     "givenName": "Gi-Do",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UBGJQAE73V6C1512770127858.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UBGJQAE73V6C1512770127858.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "wekeed.1474",
@@ -924,7 +1128,9 @@
     "familyName": "Choi",
     "givenName": "Seok-Woo",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ERF1NG1OPC2R1512770128333.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ERF1NG1OPC2R1512770128333.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "munchkin.6037",
@@ -933,7 +1139,9 @@
     "familyName": "Byun",
     "givenName": "Sang-Beom",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EXGQNIWZDGSD1512770128109.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/EXGQNIWZDGSD1512770128109.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "zunba.4946",
@@ -942,7 +1150,9 @@
     "familyName": "Kim",
     "givenName": "Joon-Hyeok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1W9Y36BABS5S1512770128543.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1W9Y36BABS5S1512770128543.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "kuki.2228",
@@ -951,7 +1161,9 @@
     "familyName": "Kim",
     "givenName": "Dae-Kuk",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/IBAIGQXWJM9X1512770128067.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/IBAIGQXWJM9X1512770128067.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "tobi.3306",
@@ -960,7 +1172,9 @@
     "familyName": "Yang",
     "givenName": "Jin-Mo",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/85PY053PQS2E1512770128333.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/85PY053PQS2E1512770128333.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "ryujehong.9666",
@@ -969,7 +1183,9 @@
     "familyName": "Ryu",
     "givenName": "Je-Hong",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/MLOCP54UWOTI1512770128331.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/MLOCP54UWOTI1512770128331.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fleta.7371",
@@ -978,7 +1194,9 @@
     "familyName": "Kim",
     "givenName": "Byung-Sun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/0XYLZKYB8LO21512770127871.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/0XYLZKYB8LO21512770127871.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "gesture.2414",
@@ -987,7 +1205,9 @@
     "familyName": "Hong",
     "givenName": "Jae-Hui",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SMHDMNUINHC51512776037290.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SMHDMNUINHC51512776037290.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "birdring.7861",
@@ -996,7 +1216,9 @@
     "familyName": "Kim",
     "givenName": "Ji-Hyeok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1UDI0E8KITK81512776037063.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1UDI0E8KITK81512776037063.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "bdosin.7214",
@@ -1005,7 +1227,9 @@
     "familyName": "Choi",
     "givenName": "Seung-Tae",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PWW0ZPOV0DSV1515621286109.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/PWW0ZPOV0DSV1515621286109.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "nus.3108",
@@ -1014,7 +1238,9 @@
     "familyName": "Kim",
     "givenName": "Jong-Seok",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SMORW78G5YSJ1512776037577.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/SMORW78G5YSJ1512776037577.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "hooreg.2047",
@@ -1023,7 +1249,9 @@
     "familyName": "Lee",
     "givenName": "Dong-Eun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ZHXU3L6G4B891512776037465.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/ZHXU3L6G4B891512776037465.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "fury.7796",
@@ -1032,7 +1260,9 @@
     "familyName": "Kim",
     "givenName": "Jun-Ho",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1XUP30CPRL2O1512776037295.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/1XUP30CPRL2O1512776037295.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "hagopeun.8436",
@@ -1041,7 +1271,9 @@
     "familyName": "Jo",
     "givenName": "Hyeon-Woo",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BYLMNO25M5M21512776037306.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/BYLMNO25M5M21512776037306.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "woohyal.2957",
@@ -1050,7 +1282,9 @@
     "familyName": "Seong",
     "givenName": "Seung-Hyun",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9J5YW9MTH58G1512776037751.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9J5YW9MTH58G1512776037751.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "profit.1553",
@@ -1059,7 +1293,9 @@
     "familyName": "Park",
     "givenName": "Jun-Young",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/Y3G5RS25UNEN1512776037593.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/Y3G5RS25UNEN1512776037593.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "handle": "closer.2567",
@@ -1068,6 +1304,8 @@
     "familyName": "Jung",
     "givenName": "Won-Sik",
     "nationality": "KR",
-    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/HP35EVGGR6P91512776037007.png"
+    "headshot": "https://bnetcmsus-a.akamaihd.net/cms/page_media/HP35EVGGR6P91512776037007.png",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   }
 ]

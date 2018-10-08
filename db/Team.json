@@ -13,7 +13,9 @@
     "coaches": "Jayne, Tikatee, cocco, Vol’Jin, Aero",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NO44N7DDJAPF1508792362936.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/YX6JZ6FR89LU1507822882865.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/YX6JZ6FR89LU1507822882865.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "费城融合队",
@@ -29,7 +31,9 @@
     "coaches": "Kirby, NamedHwi, Hayes",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3JZTLCPH37QD1508792362853.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/LAKZ6R7QEG6S1507822883033.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/LAKZ6R7QEG6S1507822883033.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "休斯顿神枪手队",
@@ -45,7 +49,9 @@
     "coaches": "HyunWoo, KyKy, TaiRong, MESR",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/HLRHYU5MT9MD1508792362935.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UPM8U5QV3DDU1507858876250.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/UPM8U5QV3DDU1507858876250.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "波士顿崛起队",
@@ -61,7 +67,9 @@
     "coaches": "Gamsu",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/43UINMGMA83X1513383982827.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/W4FGQ24HKCB51513383982827.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/W4FGQ24HKCB51513383982827.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "纽约九霄天擎队",
@@ -77,7 +85,9 @@
     "coaches": "Pavane, zet",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/9r/9RYLM8FICLJ01508818792450.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3PBR8VEYM8SH1517250447953.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3PBR8VEYM8SH1517250447953.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "旧金山震动队",
@@ -93,7 +103,9 @@
     "coaches": "NineK, Junkbuck, Crusty",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/YO24NN5KAOFL1508792362791.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/0SY7LHKHV86R1507822883113.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/0SY7LHKHV86R1507822883113.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "洛杉矶英勇队",
@@ -109,7 +121,9 @@
     "coaches": "Stoop, Moon, daemoN, Gunba",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/0D8BNUWVZP6B1508792362890.PNG",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/L3U59GQVS1ZK1507822882879.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/L3U59GQVS1ZK1507822882879.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "洛杉矶角斗士队",
@@ -125,7 +139,9 @@
     "coaches": "Tim, dpei",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/3AEMOZZL76PF1508792362892.PNG",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/CHTRRZCBEYGN1507822882862.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/CHTRRZCBEYGN1507822882862.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "佛罗里达狂欢队",
@@ -141,7 +157,9 @@
     "coaches": "Mineral, r2der",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/4GO273NATVWM1508792362854.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/M1KNTZW8SGHZ1507822883041.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/M1KNTZW8SGHZ1507822883041.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "上海龙之队",
@@ -157,7 +175,9 @@
     "coaches": "BlueHaS, creed",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/B0R64QSNCDLX1508792362793.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/ZIVUVIWXNIFL1507822883114.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/ZIVUVIWXNIFL1507822883114.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "首尔王朝队",
@@ -173,7 +193,9 @@
     "coaches": "KDG, Changgoon",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/LHRSIW3NWH211508792362796.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/E9MU0AK0JIXT1507858876249.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/page_media/E9MU0AK0JIXT1507858876249.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   },
   {
     "name": "伦敦喷火战斗机队",
@@ -189,6 +211,8 @@
     "coaches": "Jfeel, Agape, Coach815",
     "rank": "owl",
     "logo": "https://bnetcmsus-a.akamaihd.net/cms/page_media/NW461AQIYQMK1508792363133.png",
-    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/HCS229B4DP021507822883016.svg"
+    "icon": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/HCS229B4DP021507822883016.svg",
+    "createAt": ISODate("2018-10-05T15:03:12.000+0000"),
+    "updateAt": ISODate("2018-10-05T15:03:12.000+0000")
   }
 ]
