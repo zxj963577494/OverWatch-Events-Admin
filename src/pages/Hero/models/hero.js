@@ -2,8 +2,8 @@ import {
   getHeroesById,
   getHeroesByPage,
   getHeroes,
-  getTotal,
   postHeroes,
+  putHeroes,
   removeHeroes,
 } from '@/services/heroes'
 
@@ -15,7 +15,7 @@ export default {
       list: [],
       pagination: {
         total: 0,
-        currentPage: 1,
+        current: 1,
         pageSize: 10,
       },
     },
@@ -26,40 +26,34 @@ export default {
       const response = yield call(getHeroesById, payload)
       if (callback) callback(response)
     },
-    *fetchAll(_, { call, put }) {
-      const response = yield call(getHeroes)
+    *fetchAll({ payload }, { call, put }) {
+      const response = yield call(getHeroes, payload)
       yield put({
         type: 'show',
-        payload: {
-          list: response,
-          pagination: {},
-        },
+        payload: response,
       })
     },
-    *fetch({ payload }, { call, put, select }) {
-      const _pagination = yield select(state => state.hero.data.pagination)
-      const total = yield call(getTotal)
-      const page = Object.assign({}, _pagination, payload.pagination, { total })
-      if (_pagination.total > total && total % page.pageSize === 0) {
-        page.currentPage -= 1
-      }
-      const list = yield call(getHeroesByPage, payload, page)
+    *fetch({ payload }, { call, put }) {
+      const response = yield call(getHeroesByPage, payload)
       yield put({
         type: 'show',
-        payload: {
-          list,
-          pagination: page,
-        },
+        payload: response.data,
       })
     },
-    *submit({ payload, callback }, { call }) {
+    *add({ payload, callback }, { call }) {
       yield call(postHeroes, payload)
       if (callback) {
         callback()
       }
     },
+    *edit({ payload, callback }, { call }) {
+      yield call(putHeroes, payload.id, payload.params)
+      if (callback) {
+        callback()
+      }
+    },
     *remove({ payload, callback }, { call }) {
-      yield call(removeHeroes, payload)
+      yield call(removeHeroes, payload.id)
       if (callback) {
         callback()
       }
@@ -72,13 +66,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          list: payload.list.map(x => {
-            return {
-              ...x,
-              key: x.objectId,
-            }
-          }),
-          pagination: payload.pagination,
+          ...payload,
         },
       }
     },

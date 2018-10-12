@@ -65,8 +65,7 @@ class BasicList extends PureComponent {
     dispatch({
       type: 'hero/fetch',
       payload: {
-        params: {},
-        pagination,
+        ...pagination,
       },
     })
   }
@@ -82,7 +81,7 @@ class BasicList extends PureComponent {
     e.preventDefault()
     const { dispatch, form } = this.props
     const { current, isAdd } = this.state
-    const id = current ? current.objectId : ''
+    const id = current ? current.id : ''
 
     setTimeout(() => this.addBtn.blur(), 0)
 
@@ -93,13 +92,13 @@ class BasicList extends PureComponent {
       })
       if (isAdd) {
         dispatch({
-          type: 'hero/submit',
+          type: 'hero/add',
           payload: { ...fieldsValue },
         })
       } else {
         dispatch({
-          type: 'hero/submit',
-          payload: { id, ...fieldsValue },
+          type: 'hero/edit',
+          payload: { id, params: fieldsValue },
         })
       }
     })
@@ -114,16 +113,21 @@ class BasicList extends PureComponent {
   }
 
   handleRemove = item => {
-    const { dispatch } = this.props
+    const {
+      dispatch,
+      hero: {
+        data: { pagination },
+      },
+    } = this.props
     dispatch({
       type: 'hero/remove',
       payload: {
-        objectId: item.objectId,
+        id: item.id,
       },
       callback: () => {
         dispatch({
           type: 'hero/fetch',
-          payload: { pagination: this.pagination },
+          payload: { ...pagination, currentPage: pagination.current },
         })
       },
     })
@@ -155,42 +159,27 @@ class BasicList extends PureComponent {
         />
       </div>
     )
-
     const paginationProps = {
       showSizeChanger: true,
       showQuickJumper: true,
       ...pagination,
-      onChange: (page, pageSize) => {
+      onChange: (currentPage, pageSize) => {
         const { dispatch } = this.props
-        this.pagination = {
-          currentPage: page,
-          pageSize,
-        }
         dispatch({
           type: 'hero/fetch',
           payload: {
-            params: {},
-            pagination: {
-              currentPage: this.pagination.currentPage,
-              pageSize: this.pagination.pageSize,
-            },
+            currentPage,
+            pageSize,
           },
         })
       },
-      onShowSizeChange: (current, size) => {
+      onShowSizeChange: (currentPage, pageSize) => {
         const { dispatch } = this.props
-        this.pagination = {
-          currentPage: current,
-          pageSize: size,
-        }
         dispatch({
           type: 'hero/fetch',
           payload: {
-            params: {},
-            pagination: {
-              currentPage: this.pagination.currentPage,
-              pageSize: this.pagination.pageSize,
-            },
+            currentPage,
+            pageSize,
           },
         })
       },
