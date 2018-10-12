@@ -86,7 +86,7 @@ export default {
     },
   },
   manifest: {
-    name: 'overwatch-events-admin',
+    name: 'overwatch-antd-admin',
     background_color: '#FFF',
     description: 'An out-of-box UI solution for enterprise applications as a React boilerplate.',
     display: 'standalone',
