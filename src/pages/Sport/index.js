@@ -30,23 +30,12 @@ const CreateForm = Form.create()(props => {
   const okHandle = () => {
     form.validateFields((err, fieldsValue) => {
       if (err) return
-      const values = {
-        ...fieldsValue,
-        startDate: {
-          __type: 'Date',
-          iso: fieldsValue.startDate.format('YYYY-MM-DD HH:mm:ss'),
-        },
-        endDate: {
-          __type: 'Date',
-          iso: fieldsValue.endDate.format('YYYY-MM-DD HH:mm:ss'),
-        },
-      }
       form.resetFields()
       if (isAdd) {
-        handleAdd(values)
+        handleAdd(fieldsValue)
       } else {
-        const id = model.objectId
-        handleEdit({id, ...values})
+        const { id } = model
+        handleEdit(id, fieldsValue)
       }
     })
   }
@@ -305,18 +294,12 @@ class SportList extends PureComponent {
     if (sorter.field) {
       params.sorter = `${sorter.field}_${sorter.order}`
     }
-    this.pagination = {
-      currentPage: pagination.current,
-      pageSize: pagination.pageSize,
-    }
     dispatch({
       type: 'sport/fetch',
       payload: {
-        params,
-        pagination: {
-          currentPage: pagination.current,
-          pageSize: pagination.pageSize,
-        },
+        ...params,
+        currentPage: pagination.current,
+        pageSize: pagination.pageSize,
       },
     })
   }
@@ -369,15 +352,24 @@ class SportList extends PureComponent {
   }
 
   handleAdd = fields => {
-    const { dispatch } = this.props
+    const {
+      dispatch,
+      sport: {
+        data: { pagination },
+      },
+    } = this.props
 
     dispatch({
-      type: 'sport/submit',
-      payload: fields,
+      type: 'sport/add',
+      payload: {
+        ...fields,
+        startDate: moment(fields.startDate).format('YYYY-MM-DD HH:mm:ss'),
+        endDate: moment(fields.endDate).format('YYYY-MM-DD HH:mm:ss'),
+      },
       callback: () => {
         dispatch({
           type: 'sport/fetch',
-          payload: {},
+          payload: { ...pagination, currentPage: pagination.current },
         })
       },
     })
@@ -385,16 +377,28 @@ class SportList extends PureComponent {
     this.handleModalVisible()
   }
 
-  handleEdit = fields => {
-    const { dispatch } = this.props
+  handleEdit = (id, fields) => {
+    const {
+      dispatch,
+      sport: {
+        data: { pagination },
+      },
+    } = this.props
 
     dispatch({
-      type: 'sport/submit',
-      payload: fields,
+      type: 'sport/edit',
+      payload: {
+        id,
+        params: {
+          ...fields,
+          startDate: moment(fields.startDate).format('YYYY-MM-DD HH:mm:ss'),
+          endDate: moment(fields.endDate).format('YYYY-MM-DD HH:mm:ss'),
+        },
+      },
       callback: () => {
         dispatch({
           type: 'sport/fetch',
-          payload: { pagination: this.pagination },
+          payload: { ...pagination, currentPage: pagination.current },
         })
       },
     })
@@ -403,16 +407,21 @@ class SportList extends PureComponent {
   }
 
   handleRemove = record => {
-    const { dispatch } = this.props
+    const {
+      dispatch,
+      sport: {
+        data: { pagination },
+      },
+    } = this.props
     dispatch({
       type: 'sport/remove',
       payload: {
-        objectId: record.objectId,
+        id: record.id,
       },
       callback: () => {
         dispatch({
           type: 'sport/fetch',
-          payload: { pagination: this.pagination },
+          payload: { ...pagination, currentPage: pagination.current },
         })
       },
     })

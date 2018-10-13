@@ -1,8 +1,9 @@
 import {
   getSportsById,
   getSportsByPage,
-  getTotal,
+  getSports,
   postSports,
+  putSports,
   removeSports,
 } from '@/services/sports'
 
@@ -14,7 +15,7 @@ export default {
       list: [],
       pagination: {
         total: 0,
-        currentPage: 1,
+        current: 1,
         pageSize: 10,
       },
     },
@@ -22,33 +23,37 @@ export default {
 
   effects: {
     *fetchById({ payload, callback }, { call }) {
-      const response = yield call(getSportsById, payload)
+      const response = yield call(getSportsById, payload.id)
       if (callback) callback(response)
     },
-    *fetch({ payload }, { call, put, select }) {
-      const _pagination = yield select(state => state.sport.data.pagination)
-      const total = yield call(getTotal)
-      const page = Object.assign({}, _pagination, payload.pagination, { total })
-      if (_pagination.total > total && total % page.pageSize === 0) {
-        page.currentPage -= 1
-      }
-      const list = yield call(getSportsByPage, payload, page)
+    *fetchAll({ payload }, { call, put }) {
+      const response = yield call(getSports, { ...payload, isPaging: 0 })
       yield put({
         type: 'show',
-        payload: {
-          list,
-          pagination: page,
-        },
+        payload: response.data,
       })
     },
-    *submit({ payload, callback }, { call }) {
+    *fetch({ payload }, { call, put }) {
+      const response = yield call(getSportsByPage, payload)
+      yield put({
+        type: 'show',
+        payload: response.data,
+      })
+    },
+    *add({ payload, callback }, { call }) {
       yield call(postSports, payload)
       if (callback) {
         callback()
       }
     },
+    *edit({ payload, callback }, { call }) {
+      yield call(putSports, payload.id, payload.params)
+      if (callback) {
+        callback()
+      }
+    },
     *remove({ payload, callback }, { call }) {
-      yield call(removeSports, payload)
+      yield call(removeSports, payload.id)
       if (callback) {
         callback()
       }
@@ -61,15 +66,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          list: payload.list.map(x => {
-            return {
-              ...x,
-              key: x.objectId,
-              startDate: x.startDate.iso,
-              endDate: x.endDate.iso,
-            }
-          }),
-          pagination: payload.pagination,
+          ...payload,
         },
       }
     },
