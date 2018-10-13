@@ -1,15 +1,11 @@
 import {
   getTeamsById,
   getTeamsByPage,
-  getTotal,
+  getTeams,
   postTeams,
+  putTeams,
   removeTeams,
-  relationAddTeamsSocial,
-  relationGetTeamsSocial,
-  relationAddTeamsPlayer,
-  relationRemoveTeamsPlayer,
 } from '@/services/teams'
-import { postSocial, removeSocial } from '@/services/social'
 
 export default {
   namespace: 'team',
@@ -19,7 +15,7 @@ export default {
       list: [],
       pagination: {
         total: 0,
-        currentPage: 1,
+        current: 1,
         pageSize: 10,
       },
       current: {},
@@ -28,59 +24,42 @@ export default {
 
   effects: {
     *fetchById({ payload }, { call, put }) {
-      const teamResponse = yield call(getTeamsById, payload)
-      const socialResponse = yield call(relationGetTeamsSocial, payload)
-      const response = {
-        accounts: socialResponse,
-        ...teamResponse,
-      }
+      const response = yield call(getTeamsById, payload.id)
       yield put({
         type: 'putCurrent',
-        payload: response,
+        payload: response.data,
       })
     },
-    *fetch({ payload }, { call, put, select }) {
-      const _pagination = yield select(state => state.team.data.pagination)
-      const total = yield call(getTotal)
-      const page = Object.assign({}, _pagination, payload.pagination, { total })
-      if (_pagination.total > total && total % page.pageSize === 0) {
-        page.currentPage -= 1
-      }
-      const list = yield call(getTeamsByPage, payload, page)
+    *fetchAll({ payload }, { call, put }) {
+      const response = yield call(getTeams, { ...payload, isPaging: 0 })
       yield put({
         type: 'show',
-        payload: {
-          list,
-          pagination: page,
-        },
+        payload: response.data,
       })
     },
-    *submit({ payload, callback }, { call }) {
-      const { accounts, players } = payload
-      const team = Object.assign({}, payload)
-      delete team.accounts
-      const origin = yield call(getTeamsById, payload)
-      const teamResponse = yield call(postTeams, team)
-      const teamId = teamResponse.objectId || team.id
-      if (team.id || accounts.length > 0) {
-        yield call(removeSocial, payload)
-        const socialResponse = yield call(postSocial, accounts, teamId)
-        if (socialResponse) {
-          const socialIds = socialResponse.map(x => x.success.objectId)
-          yield call(relationAddTeamsSocial, { teamId, socialIds })
-        }
+    *fetch({ payload }, { call, put }) {
+      debugger
+      const response = yield call(getTeamsByPage, payload)
+      yield put({
+        type: 'show',
+        payload: response.data,
+      })
+    },
+    *add({ payload, callback }, { call }) {
+      yield call(postTeams, payload)
+      if (callback) {
+        callback()
       }
-      if (team.id || players.length > 0) {
-        yield call(relationRemoveTeamsPlayer, { teamId, playerIds: origin.players })
-        yield call(relationAddTeamsPlayer, { teamId, playerIds: players })
-      }
+    },
+    *edit({ payload, callback }, { call }) {
+      yield call(putTeams, payload.id, payload.params)
       if (callback) {
         callback()
       }
     },
     *remove({ payload, callback }, { call }) {
-      yield call(removeTeams, payload)
-      yield call(removeSocial, payload)
+      debugger
+      yield call(removeTeams, payload.id)
       if (callback) {
         callback()
       }
@@ -93,13 +72,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          list: payload.list.map(x => {
-            return {
-              ...x,
-              key: x.objectId,
-            }
-          }),
-          pagination: payload.pagination,
+          ...payload,
         },
       }
     },
@@ -108,7 +81,11 @@ export default {
         ...state,
         data: {
           ...state.data,
-          current: { ...payload, createdTime: payload.createdTime && payload.createdTime.iso },
+          current: {
+            ...payload,
+            id: payload._id,
+            players: payload.players.map(x => x._id),
+          },
         },
       }
     },

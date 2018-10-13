@@ -47,12 +47,10 @@ const fieldLabels = {
   players: '成员',
 }
 
-const tableData = []
-
 @connect(({ loading, player, team }) => ({
   player,
   team,
-  submitting: loading.effects['team/submit'],
+  submitting: loading.effects['team/edit'],
 }))
 @Form.create()
 class TeamEdit extends PureComponent {
@@ -152,20 +150,20 @@ class TeamEdit extends PureComponent {
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
-        const { objectId } = current
-        const payload = values.createdTime
-          ? {
-              id: objectId,
-              ...values,
-              createdTime: {
-                __type: 'Date',
-                iso: values.createdTime.format('YYYY-MM-DD HH:mm:ss'),
-              },
-            }
-          : { id: objectId, ...values }
+        const { id } = current
         dispatch({
-          type: 'team/submit',
-          payload,
+          type: 'team/edit',
+          payload: {
+            id,
+            params: {
+              ...values,
+              accounts: values.accounts.map(x => ({
+                account: x.account,
+                url: x.url,
+              })),
+              createdTime: moment(values.createdTime).format('YYYY-MM-DD'),
+            },
+          },
           callback: () => {
             dispatch(routerRedux.push('/team/list'))
           },
@@ -358,7 +356,7 @@ class TeamEdit extends PureComponent {
                       }
                     >
                       {list.map(x => (
-                        <Option key={x.key} value={x.objectId}>
+                        <Option key={x.key} value={x.id}>
                           {x.name}
                         </Option>
                       ))}
@@ -371,7 +369,7 @@ class TeamEdit extends PureComponent {
         </Card>
         <Card title="社交账号" bordered={false}>
           {getFieldDecorator('accounts', {
-            initialValue: tableData,
+            initialValue: current.accounts || [],
           })(<SocailTableForm />)}
         </Card>
         <FooterToolbar style={{ width }}>

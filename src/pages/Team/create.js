@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { Card, Button, Form, Icon, Col, Row, DatePicker, Input, Select, Popover, Radio } from 'antd'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
+import moment from 'moment'
 import FooterToolbar from '@/components/FooterToolbar'
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import SocailTableForm from '@/pages/Player/SocailTableForm'
@@ -35,7 +36,7 @@ const fieldLabels = {
 
 @connect(({ loading, player }) => ({
   player,
-  submitting: loading.effects['team/submit'],
+  submitting: loading.effects['team/add'],
 }))
 @Form.create()
 class TeamCreate extends PureComponent {
@@ -120,19 +121,16 @@ class TeamCreate extends PureComponent {
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
-        // submit the values
-        const payload = values.createdTime
-          ? {
-              ...values,
-              createdTime: {
-                __type: 'Date',
-                iso: values.createdTime.format('YYYY-MM-DD HH:mm:ss'),
-              },
-            }
-          : { ...values }
         dispatch({
-          type: 'team/submit',
-          payload,
+          type: 'team/add',
+          payload: {
+            ...values,
+            accounts: values.accounts.map(x => ({
+              account: x.account,
+              url: x.url,
+            })),
+            createdTime: moment(values.createdTime).format('YYYY-MM-DD'),
+          },
           callback: () => {
             dispatch(routerRedux.push('/team/list'))
           },
@@ -313,7 +311,7 @@ class TeamCreate extends PureComponent {
                       }
                     >
                       {list.map(x => (
-                        <Option key={x.key} value={x.objectId}>
+                        <Option key={x.key} value={x.id}>
                           {x.name}
                         </Option>
                       ))}
