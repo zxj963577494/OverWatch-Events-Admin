@@ -32,7 +32,6 @@ export async function putTeams(id, params) {
 }
 
 export async function removeTeams(id) {
-  debugger
   return request(`/api/v1/teams/${id}`, {
     method: 'DELETE',
   })

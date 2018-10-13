@@ -38,7 +38,6 @@ export default {
       })
     },
     *fetch({ payload }, { call, put }) {
-      debugger
       const response = yield call(getTeamsByPage, payload)
       yield put({
         type: 'show',
@@ -58,7 +57,6 @@ export default {
       }
     },
     *remove({ payload, callback }, { call }) {
-      debugger
       yield call(removeTeams, payload.id)
       if (callback) {
         callback()
