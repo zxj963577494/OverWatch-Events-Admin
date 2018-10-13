@@ -24,24 +24,34 @@ class BasicList extends PureComponent {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
+    const {
+      dispatch,
+      player: {
+        data: { pagination },
+      },
+    } = this.props
     dispatch({
       type: 'player/fetch',
-      payload: {},
+      payload: { ...pagination, currentPage: pagination.current },
     })
   }
 
   handleRemove = item => {
-    const { dispatch } = this.props
+    const {
+      dispatch,
+      player: {
+        data: { pagination },
+      },
+    } = this.props
     dispatch({
       type: 'player/remove',
       payload: {
-        objectId: item.objectId,
+        id: item.id,
       },
       callback: () => {
         dispatch({
           type: 'player/fetch',
-          payload: { pagination: this.pagination },
+          payload: { ...pagination, currentPage: pagination.current },
         })
       },
     })
@@ -75,37 +85,23 @@ class BasicList extends PureComponent {
       showSizeChanger: true,
       showQuickJumper: true,
       ...pagination,
-      onChange: (page, pageSize) => {
+      onChange: (currentPage, pageSize) => {
         const { dispatch } = this.props
-        this.pagination = {
-          currentPage: page,
-          pageSize,
-        }
         dispatch({
           type: 'player/fetch',
           payload: {
-            params: {},
-            pagination: {
-              currentPage: this.pagination.currentPage,
-              pageSize: this.pagination.pageSize,
-            },
+            currentPage,
+            pageSize,
           },
         })
       },
-      onShowSizeChange: (current, size) => {
+      onShowSizeChange: (currentPage, pageSize) => {
         const { dispatch } = this.props
-        this.pagination = {
-          currentPage: current,
-          pageSize: size,
-        }
         dispatch({
           type: 'player/fetch',
           payload: {
-            params: {},
-            pagination: {
-              currentPage: this.pagination.currentPage,
-              pageSize: this.pagination.pageSize,
-            },
+            currentPage,
+            pageSize,
           },
         })
       },
@@ -152,7 +148,7 @@ class BasicList extends PureComponent {
               renderItem={item => (
                 <List.Item
                   actions={[
-                    <a onClick={() => this.navigatorTo(`/player/edit/${item.objectId}`)}>编辑</a>,
+                    <a onClick={() => this.navigatorTo(`/player/edit/${item.id}`)}>编辑</a>,
                     <a
                       onClick={e => {
                         e.preventDefault()
@@ -165,7 +161,7 @@ class BasicList extends PureComponent {
                 >
                   <List.Item.Meta
                     avatar={<Avatar src={item.headshot} shape="square" size="large" />}
-                    title={<a href={`/player/edit/${item.objectId}`}>{item.name}</a>}
+                    title={<a href={`/player/edit/${item.id}`}>{item.name}</a>}
                     description={item.handle}
                   />
                   <ListContent data={item} />

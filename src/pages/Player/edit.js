@@ -45,7 +45,7 @@ const fieldLabels = {
 @connect(({ hero, player, loading }) => ({
   hero,
   player,
-  submitting: loading.effects['player/submit'],
+  submitting: loading.effects['player/edit'],
 }))
 @Form.create()
 class PlayerEdit extends PureComponent {
@@ -145,20 +145,19 @@ class PlayerEdit extends PureComponent {
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
-        const { objectId } = current
-        const payload = values.birth
-          ? {
-              id: objectId,
-              ...values,
-              birth: {
-                __type: 'Date',
-                iso: values.birth.format('YYYY-MM-DD HH:mm:ss'),
-              },
-            }
-          : { id: objectId, ...values }
+        const { id } = current
         dispatch({
-          type: 'player/submit',
-          payload,
+          type: 'player/edit',
+          payload: {
+            id,
+            params: {
+              ...values,
+              accounts: values.accounts.map(x => ({
+                account: x.account,
+                url: x.url,
+              })),
+            },
+          },
           callback: () => {
             dispatch(routerRedux.push('/player/list'))
           },
@@ -179,7 +178,6 @@ class PlayerEdit extends PureComponent {
       submitting,
     } = this.props
     const { width } = this.state
-
     return (
       <PageHeaderWrapper title="编辑选手" content="编辑选手。" wrapperClassName={styles.PlayerEdit}>
         <Card title="基本信息" className={styles.card} bordered={false}>
@@ -329,7 +327,7 @@ class PlayerEdit extends PureComponent {
                       }
                     >
                       {list.map(x => (
-                        <Option key={x.key} value={x.objectId}>
+                        <Option key={x.key} value={x.id}>
                           {x.name}
                         </Option>
                       ))}

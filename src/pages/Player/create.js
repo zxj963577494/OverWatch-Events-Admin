@@ -32,7 +32,7 @@ const tableData = []
 
 @connect(({ hero, loading }) => ({
   hero,
-  submitting: loading.effects['player/submit'],
+  submitting: loading.effects['player/add'],
 }))
 @Form.create()
 class PlayerCreate extends PureComponent {
@@ -117,18 +117,15 @@ class PlayerCreate extends PureComponent {
     } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
-        const payload = values.birth
-          ? {
-              ...values,
-              birth: {
-                __type: 'Date',
-                iso: values.birth.format('YYYY-MM-DD HH:mm:ss'),
-              },
-            }
-          : { ...values }
         dispatch({
-          type: 'player/submit',
-          payload,
+          type: 'player/add',
+          payload: {
+            ...values,
+            accounts: values.accounts.map(x => ({
+              account: x.account,
+              url: x.url,
+            })),
+          },
           callback: () => {
             dispatch(routerRedux.push('/player/list'))
           },
@@ -146,7 +143,6 @@ class PlayerCreate extends PureComponent {
       submitting,
     } = this.props
     const { width } = this.state
-
     return (
       <PageHeaderWrapper
         title="新建选手"
@@ -293,7 +289,7 @@ class PlayerCreate extends PureComponent {
                       }
                     >
                       {list.map(x => (
-                        <Option key={x.key} value={x.objectId}>
+                        <Option key={x.key} value={x.id}>
                           {x.name}
                         </Option>
                       ))}

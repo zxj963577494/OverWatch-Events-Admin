@@ -23,14 +23,14 @@ export default {
 
   effects: {
     *fetchById({ payload, callback }, { call }) {
-      const response = yield call(getHeroesById, payload)
+      const response = yield call(getHeroesById, payload.id)
       if (callback) callback(response)
     },
     *fetchAll({ payload }, { call, put }) {
-      const response = yield call(getHeroes, payload)
+      const response = yield call(getHeroes, { ...payload, isPaging: 0 })
       yield put({
         type: 'show',
-        payload: response,
+        payload: response.data,
       })
     },
     *fetch({ payload }, { call, put }) {

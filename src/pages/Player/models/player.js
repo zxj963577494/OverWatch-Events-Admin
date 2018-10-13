@@ -2,13 +2,9 @@ import {
   getPlayersById,
   getPlayersByPage,
   getPlayers,
-  getTotal,
   postPlayers,
+  putPlayers,
   removePlayers,
-  relationAddPlayersSocial,
-  relationGetPlayersSocial,
-  relationAddPlayersHero,
-  relationRemovePlayersHero,
 } from '@/services/players'
 import { postSocial, removeSocial } from '@/services/social'
 
@@ -29,69 +25,40 @@ export default {
 
   effects: {
     *fetchById({ payload }, { call, put }) {
-      const playerResponse = yield call(getPlayersById, payload)
-      const socialResponse = yield call(relationGetPlayersSocial, payload)
-      const response = {
-        accounts: socialResponse,
-        ...playerResponse,
-      }
+      const response = yield call(getPlayersById, payload.id)
       yield put({
         type: 'putCurrent',
-        payload: response,
+        payload: response.data,
       })
     },
-    *fetchAll(_, { call, put }) {
-      const response = yield call(getPlayers)
+    *fetchAll({ payload }, { call, put }) {
+      const response = yield call(getPlayers, { ...payload, isPaging: 0 })
       yield put({
         type: 'show',
-        payload: {
-          list: response,
-          pagination: {},
-        },
+        payload: response.data,
       })
     },
-    *fetch({ payload }, { call, put, select }) {
-      const _pagination = yield select(state => state.player.data.pagination)
-      const total = yield call(getTotal)
-      const page = Object.assign({}, _pagination, payload.pagination, { total })
-      if (_pagination.total > total && total % page.pageSize === 0) {
-        page.currentPage -= 1
-      }
-      const list = yield call(getPlayersByPage, payload, page)
+    *fetch({ payload }, { call, put }) {
+      const response = yield call(getPlayersByPage, payload)
       yield put({
         type: 'show',
-        payload: {
-          list,
-          pagination: page,
-        },
+        payload: response.data,
       })
     },
-    *submit({ payload, callback }, { call }) {
-      const { accounts, heroes } = payload
-      const player = Object.assign({}, payload)
-      delete player.accounts
-      const origin = yield call(getPlayersById, payload)
-      const playerResponse = yield call(postPlayers, player)
-      const playerId = playerResponse.objectId || player.id
-      if (player.id || accounts.length > 0) {
-        yield call(removeSocial, payload)
-        const socialResponse = yield call(postSocial, accounts, playerId)
-        if (socialResponse) {
-          const socialIds = socialResponse.map(x => x.success.objectId)
-          yield call(relationAddPlayersSocial, { playerId, socialIds })
-        }
+    *add({ payload, callback }, { call }) {
+      yield call(postPlayers, payload)
+      if (callback) {
+        callback()
       }
-      if (player.id || heroes.length > 0) {
-        yield call(relationRemovePlayersHero, { playerId, heroIds: origin.heroes })
-        yield call(relationAddPlayersHero, { playerId, heroIds: heroes })
-      }
+    },
+    *edit({ payload, callback }, { call }) {
+      yield call(putPlayers, payload.id, payload.params)
       if (callback) {
         callback()
       }
     },
     *remove({ payload, callback }, { call }) {
-      yield call(removePlayers, payload)
-      yield call(removeSocial, payload)
+      yield call(removePlayers, payload.id)
       if (callback) {
         callback()
       }
@@ -104,13 +71,7 @@ export default {
         ...state,
         data: {
           ...state.data,
-          list: payload.list.map(x => {
-            return {
-              ...x,
-              key: x.objectId,
-            }
-          }),
-          pagination: payload.pagination,
+          ...payload,
         },
       }
     },
@@ -119,7 +80,11 @@ export default {
         ...state,
         data: {
           ...state.data,
-          current: { ...payload, birth: payload.birth && payload.birth.iso },
+          current: {
+            ...payload,
+            id: payload._id,
+            heroes: payload.heroes.map(x => x._id),
+          },
         },
       }
     },
