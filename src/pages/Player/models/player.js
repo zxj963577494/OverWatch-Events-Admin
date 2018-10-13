@@ -6,7 +6,6 @@ import {
   putPlayers,
   removePlayers,
 } from '@/services/players'
-import { postSocial, removeSocial } from '@/services/social'
 
 export default {
   namespace: 'player',
@@ -16,7 +15,7 @@ export default {
       list: [],
       pagination: {
         total: 0,
-        currentPage: 1,
+        current: 1,
         pageSize: 10,
       },
       current: {},
