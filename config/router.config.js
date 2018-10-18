@@ -41,6 +41,17 @@ export default [
             name: 'list',
             component: './Hero/index',
           },
+          {
+            path: '/hero/create',
+            name: 'create',
+            component: './Hero/create',
+          },
+          {
+            path: '/hero/edit/:id',
+            name: 'edit',
+            component: './Hero/edit',
+            hideInMenu: true,
+          },
         ],
       },
       {

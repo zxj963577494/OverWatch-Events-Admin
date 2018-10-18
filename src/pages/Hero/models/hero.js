@@ -1,5 +1,6 @@
 import {
   getHeroesById,
+  getHeroesByName,
   getHeroesByPage,
   getHeroes,
   postHeroes,
@@ -18,12 +19,21 @@ export default {
         current: 1,
         pageSize: 10,
       },
+      current: {},
     },
   },
 
   effects: {
-    *fetchById({ payload, callback }, { call }) {
+    *fetchById({ payload, callback }, { call, put }) {
       const response = yield call(getHeroesById, payload.id)
+      yield put({
+        type: 'putCurrent',
+        payload: response.data,
+      })
+      if (callback) callback(response)
+    },
+    *fetchByName({ payload, callback }, { call }) {
+      const response = yield call(getHeroesByName, payload.name)
       if (callback) callback(response)
     },
     *fetchAll({ payload }, { call, put }) {
@@ -67,6 +77,18 @@ export default {
         data: {
           ...state.data,
           ...payload,
+        },
+      }
+    },
+    putCurrent(state, { payload }) {
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          current: {
+            ...payload,
+            id: payload._id,
+          },
         },
       }
     },

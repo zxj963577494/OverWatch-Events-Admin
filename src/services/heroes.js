@@ -9,6 +9,10 @@ export async function getHeroesById(id) {
   return request(`/api/v1/heroes/${id}`)
 }
 
+export async function getHeroesByName(name) {
+  return request(`/api/v1/heroes/${name}`)
+}
+
 export async function getHeroesByPage(payload) {
   return request(`/api/v1/heroes?${stringify(payload)}`)
 }
