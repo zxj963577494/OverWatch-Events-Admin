@@ -58,6 +58,16 @@ class BasicList extends PureComponent {
     message.success('移除成功')
   }
 
+  handleSearch = value => {
+    const { dispatch } = this.props
+    dispatch({
+      type: 'hero/fetch',
+      payload: {
+        search: value,
+      },
+    })
+  }
+
   render() {
     const {
       hero: {
@@ -71,7 +81,7 @@ class BasicList extends PureComponent {
         <Search
           className={styles.extraContentSearch}
           placeholder="请输入英雄名称"
-          onSearch={() => ({})}
+          onSearch={this.handleSearch}
         />
       </div>
     )
