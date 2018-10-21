@@ -63,7 +63,7 @@ export default {
       }
     },
     *remove({ payload, callback }, { call }) {
-      yield call(removeHeroes, payload.id)
+      const response = yield call(removeHeroes, payload.id)
       if (callback) {
         callback()
       }

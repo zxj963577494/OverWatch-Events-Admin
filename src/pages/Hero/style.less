@@ -18,9 +18,14 @@
       margin-top: 24px;
     }
     .ant-avatar-lg {
-      width: 48px;
-      height: 48px;
-      line-height: 48px;
+      width: 128px;
+      height: 128px;
+      line-height: 128px;
+      background-color: rgba(64, 82, 117, 0.4);
+    }
+    .ant-avatar > img {
+      display: inline;
+      height: auto;
     }
   }
   .headerInfo {
@@ -50,6 +55,7 @@
   }
   .listContent {
     font-size: 0;
+    text-align: center;
     .listContentItem {
       color: @text-color-secondary;
       display: inline-block;
@@ -58,6 +64,9 @@
       margin-left: 40px;
       > span {
         line-height: 20px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.65);
+        transition: all 0.3s;
       }
       > p {
         margin-top: 4px;
@@ -69,6 +78,39 @@
   .extraContentSearch {
     margin-left: 16px;
     width: 272px;
+  }
+}
+
+.modal {
+  :global {
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+}
+
+.card {
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0 0 16px 0;
+}
+
+.advancedForm + div {
+  padding-bottom: 64px;
+}
+
+.advancedForm {
+  :global {
+    .ant-form .ant-row:last-child .ant-form-item {
+      margin-bottom: 24px;
+    }
+    .ant-table td {
+      transition: none !important;
+    }
   }
 }
 

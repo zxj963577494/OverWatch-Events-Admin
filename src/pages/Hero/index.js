@@ -6,7 +6,7 @@ import { List, Card, Button, Avatar, Form, Input, message } from 'antd'
 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
-import styles from './index.less'
+import styles from './style.less'
 
 const { Search } = Input
 
