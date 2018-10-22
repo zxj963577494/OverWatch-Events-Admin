@@ -5,6 +5,7 @@ import { routerRedux } from 'dva/router'
 import { List, Card, Button, Avatar, Form, Input, message } from 'antd'
 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import { HERO_ROLE } from '@/constant'
 
 import styles from './style.less'
 
@@ -75,6 +76,27 @@ class BasicList extends PureComponent {
       },
       loading,
     } = this.props
+
+    const ListContent = ({ data: { role, health, armour, shield } }) => (
+      <div className={styles.listContent}>
+        <div className={styles.listContentItem}>
+          <span>定位</span>
+          <p>{HERO_ROLE.filter(x => x.value === role)[0].text}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>生命值</span>
+          <p>{health}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>护甲值</span>
+          <p>{armour}</p>
+        </div>
+        <div className={styles.listContentItem}>
+          <span>护盾值</span>
+          <p>{shield}</p>
+        </div>
+      </div>
+    )
 
     const extraContent = (
       <div className={styles.extraContent}>
@@ -165,6 +187,7 @@ class BasicList extends PureComponent {
                     title={<a href={`/hero/edit/${item.id}`}>{item.name}</a>}
                     description={item.remark}
                   />
+                  <ListContent data={item} />
                 </List.Item>
               )}
             />
