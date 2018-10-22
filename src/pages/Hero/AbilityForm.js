@@ -1,11 +1,12 @@
 import React, { PureComponent, Fragment } from 'react'
-import { Button, Input, message, List, Form, Card, Avatar, Modal } from 'antd'
+import { Button, Input, message, List, Form, Card, Avatar, Modal, Select } from 'antd'
+import nanoid from 'nanoid'
 import isEqual from 'lodash/isEqual'
-import Result from '@/components/Result'
 import TableForm from './TableForm'
 import styles from './style.less'
 
 const FormItem = Form.Item
+const { TextArea } = Input
 
 @Form.create()
 class AbilityForm extends PureComponent {
@@ -18,12 +19,13 @@ class AbilityForm extends PureComponent {
       /* eslint-disable-next-line react/no-unused-state */
       value: props.value,
       abilityVisible: false,
-      done: false,
       abilityCurrent: {
         abilityTitle: '',
         abilityLogo: '',
         abilityVideoUrl: '',
         abilityDescription: '',
+        abilityRemark: '',
+        abilityTags: [],
         abilityProperty: [],
       },
     }
@@ -55,7 +57,7 @@ class AbilityForm extends PureComponent {
   handleAbilityRemove = item => {
     const { data } = this.state
     const { onChange } = this.props
-    const newData = data.filter(x => x.abilityTitle !== item.abilityTitle)
+    const newData = data.filter(x => x.key !== item.key)
     this.setState({
       data: newData,
     })
@@ -66,34 +68,47 @@ class AbilityForm extends PureComponent {
     e.preventDefault()
     this.setState({
       loading: true,
+      abilityVisible: false,
     })
     const { form } = this.props
+    const { abilityCurrent } = this.state
     form.validateFields((err, fieldsValue) => {
       if (err) {
-        return message.error('请填写正确信息。')
+        message.error('请填写正确信息。')
+        return
       }
       const { data } = this.state
+      if (abilityCurrent.key) {
+        data.forEach(x => {
+          if (x.key === abilityCurrent.key) {
+            /* eslint-disable */
+            x.abilityTitle = fieldsValue.abilityTitle
+            x.abilityLogo = fieldsValue.abilityLogo
+            x.abilityVideoUrl = fieldsValue.abilityVideoUrl
+            x.abilityDescription = fieldsValue.abilityDescription
+            x.abilityRemark = fieldsValue.abilityRemark
+            x.abilityTags = fieldsValue.abilityTags
+            x.abilityProperty = fieldsValue.abilityProperty
+          }
+        })
+      } else {
+        data.unshift({
+          key: nanoid(8),
+          abilityTitle: fieldsValue.abilityTitle,
+          abilityLogo: fieldsValue.abilityLogo,
+          abilityVideoUrl: fieldsValue.abilityVideoUrl,
+          abilityDescription: fieldsValue.abilityDescription,
+          abilityRemark: fieldsValue.abilityRemark,
+          abilityTags: fieldsValue.abilityTags,
+          abilityProperty: fieldsValue.abilityProperty,
+        })
+      }
       const newData = data.map(item => ({ ...item }))
-      newData.unshift({
-        abilityTitle: fieldsValue.abilityTitle,
-        abilityLogo: fieldsValue.abilityLogo,
-        abilityVideoUrl: fieldsValue.abilityVideoUrl,
-        abilityDescription: fieldsValue.abilityDescription,
-        abilityProperty: fieldsValue.abilityProperty,
-      })
       const { onChange } = this.props
       onChange(newData)
       this.setState({
-        done: true,
         loading: false,
       })
-    })
-  }
-
-  handleAbilityDone = () => {
-    this.setState({
-      done: false,
-      abilityVisible: false,
     })
   }
 
@@ -104,7 +119,7 @@ class AbilityForm extends PureComponent {
   }
 
   render() {
-    const { loading, data, abilityVisible, done } = this.state
+    const { loading, data, abilityVisible } = this.state
 
     const ListContent = ({ data: { abilityProperty } }) => (
       <div className={styles.listContent}>
@@ -117,61 +132,61 @@ class AbilityForm extends PureComponent {
       </div>
     )
 
-    const modalFooter = done
-      ? { footer: null, onCancel: this.handleAbilityDone }
-      : { okText: '保存', onOk: this.handleAbilitySubmit, onCancel: this.handleAbilityCancel }
+    const modalFooter = {
+      okText: '保存',
+      onOk: this.handleAbilitySubmit,
+      onCancel: this.handleAbilityCancel,
+    }
 
     const getAbilityModalContent = () => {
       const {
         form: { getFieldDecorator },
       } = this.props
       const { abilityCurrent } = this.state
-      if (done) {
-        return (
-          <Result
-            type="success"
-            title="操作成功"
-            actions={
-              <Button type="primary" onClick={this.handleAbilityDone}>
-                知道了
-              </Button>
-            }
-            className={styles.formResult}
-          />
-        )
-      }
       return (
-        <Form className={styles.modal} onSubmit={this.handleAbilitySubmit}>
-          <Card title="基本信息" bordered={false}>
-            <FormItem label="技能名称" {...this.formLayout}>
-              {getFieldDecorator('abilityTitle', {
-                rules: [{ required: true, message: '请输入技能名称' }],
-                initialValue: abilityCurrent.abilityTitle,
-              })(<Input placeholder="请输入技能名称" />)}
-            </FormItem>
-            <FormItem label="LOGO" {...this.formLayout}>
-              {getFieldDecorator('abilityLogo', {
-                rules: [{ required: true, message: '请输入LOGO' }],
-                initialValue: abilityCurrent.abilityLogo,
-              })(<Input placeholder="请输入LOGO" />)}
-            </FormItem>
-            <FormItem label="视频地址" {...this.formLayout}>
-              {getFieldDecorator('abilityVideoUrl', {
-                initialValue: abilityCurrent.abilityVideoUrl,
-              })(<Input placeholder="请输入视频地址" />)}
-            </FormItem>
-            <FormItem label="技能描述" {...this.formLayout}>
-              {getFieldDecorator('abilityDescription', {
-                initialValue: abilityCurrent.abilityDescription,
-              })(<Input placeholder="技能描述" />)}
-            </FormItem>
-          </Card>
-          <Card title="扩展信息" bordered={false}>
-            {getFieldDecorator('abilityProperty', {
-              initialValue: abilityCurrent.abilityProperty,
-            })(<TableForm />)}
-          </Card>
-        </Form>
+        <div className={styles.modal} style={{ height: 500, overflowY: 'auto' }}>
+          <Form onSubmit={this.handleAbilitySubmit}>
+            <Card title="基本信息" bordered={false}>
+              <FormItem label="技能名称" {...this.formLayout}>
+                {getFieldDecorator('abilityTitle', {
+                  rules: [{ required: true, message: '请输入技能名称' }],
+                  initialValue: abilityCurrent.abilityTitle,
+                })(<Input placeholder="请输入技能名称" />)}
+              </FormItem>
+              <FormItem label="LOGO" {...this.formLayout}>
+                {getFieldDecorator('abilityLogo', {
+                  rules: [{ required: true, message: '请输入LOGO' }],
+                  initialValue: abilityCurrent.abilityLogo,
+                })(<Input placeholder="请输入LOGO" />)}
+              </FormItem>
+              <FormItem label="视频地址" {...this.formLayout}>
+                {getFieldDecorator('abilityVideoUrl', {
+                  initialValue: abilityCurrent.abilityVideoUrl,
+                })(<Input placeholder="请输入视频地址" />)}
+              </FormItem>
+              <FormItem label="技能描述" {...this.formLayout}>
+                {getFieldDecorator('abilityDescription', {
+                  initialValue: abilityCurrent.abilityDescription,
+                })(<TextArea rows={3} placeholder="技能描述" />)}
+              </FormItem>
+              <FormItem label="技能点评" {...this.formLayout}>
+                {getFieldDecorator('abilityRemark', {
+                  initialValue: abilityCurrent.abilityRemark,
+                })(<TextArea rows={3} placeholder="技能点评" />)}
+              </FormItem>
+              <FormItem label="自定义标签" {...this.formLayout}>
+                {getFieldDecorator('abilityTags', {
+                  initialValue: abilityCurrent.abilityTags,
+                })(<Select mode="tags" placeholder="请输入自定义标签" style={{ width: '100%' }} />)}
+              </FormItem>
+            </Card>
+            <Card title="扩展信息" bordered={false}>
+              {getFieldDecorator('abilityProperty', {
+                initialValue: abilityCurrent.abilityProperty,
+              })(<TableForm />)}
+            </Card>
+          </Form>
+        </div>
       )
     }
 
@@ -214,7 +229,7 @@ class AbilityForm extends PureComponent {
             >
               <List.Item.Meta
                 avatar={<Avatar src={item.abilityLogo} shape="square" size="large" />}
-                title={<a href={item.href}>{item.abilityName}</a>}
+                title={<a href={item.href}>{item.abilityTitle}</a>}
                 description={item.abilityDescription}
               />
               <ListContent data={item} />
@@ -222,7 +237,7 @@ class AbilityForm extends PureComponent {
           )}
         />
         <Modal
-          title={done ? null : `技能添加`}
+          title="技能添加"
           className={styles.standardListForm}
           width={720}
           destroyOnClose

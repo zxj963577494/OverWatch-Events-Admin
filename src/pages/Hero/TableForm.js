@@ -1,11 +1,10 @@
 import React, { PureComponent, Fragment } from 'react'
-import { Table, Button, Input, message, Popconfirm, Divider } from 'antd'
+import { Table, Button, Input, Popconfirm, Divider } from 'antd'
+import nanoid from 'nanoid'
 import isEqual from 'lodash/isEqual'
 import styles from './style.less'
 
 class TableForm extends PureComponent {
-  index = 0
-
   cacheOriginData = {}
 
   constructor(props) {
@@ -53,7 +52,7 @@ class TableForm extends PureComponent {
     const { data } = this.state
     const newData = data.map(item => ({ ...item }))
     newData.push({
-      key: `NEW_TEMP_ID_${this.index}`,
+      key: nanoid(8),
       value: '',
       name: '',
       cnName: '',
@@ -61,7 +60,6 @@ class TableForm extends PureComponent {
       editable: true,
       isNew: true,
     })
-    this.index += 1
     this.setState({ data: newData })
   }
 
@@ -100,14 +98,6 @@ class TableForm extends PureComponent {
         return
       }
       const target = this.getRowByKey(key) || {}
-      if (!target.value || !target.name || !target.cnName || !target.cnValue) {
-        message.error('请填写完整成员信息。')
-        e.target.focus()
-        this.setState({
-          loading: false,
-        })
-        return
-      }
       delete target.isNew
       this.toggleEditable(e, key)
       const { data } = this.state
