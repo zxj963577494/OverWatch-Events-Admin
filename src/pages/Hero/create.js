@@ -5,6 +5,7 @@ import { routerRedux } from 'dva/router'
 import FooterToolbar from '@/components/FooterToolbar'
 import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import AbilityForm from './AbilityForm'
+import CapabilityForm from './CapabilityForm'
 
 import styles from './style.less'
 
@@ -476,9 +477,14 @@ class HeroCreate extends PureComponent {
             </Form>
           </Card>
           <Card title="技能信息" bordered={false}>
-            {getFieldDecorator('abilities', {
+            {getFieldDecorator('capabilities', {
               initialValue: [],
             })(<AbilityForm />)}
+          </Card>
+          <Card title="能力信息" bordered={false}>
+            {getFieldDecorator('capabilities', {
+              initialValue: [],
+            })(<CapabilityForm />)}
           </Card>
           <FooterToolbar style={{ width }}>
             {this.getErrorInfo()}
