@@ -184,8 +184,8 @@ class BasicList extends PureComponent {
                 >
                   <List.Item.Meta
                     avatar={<Avatar src={item.avatar} shape="square" size="large" />}
-                    title={<a href={`/hero/edit/${item.id}`}>{item.name}</a>}
-                    description={item.remark}
+                    title={<a href={`/hero/edit/${item.id}`}>{item.cnname}</a>}
+                    description={item.remark || item.description}
                   />
                   <ListContent data={item} />
                 </List.Item>

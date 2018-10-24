@@ -25,8 +25,9 @@ const fieldLabels = {
   height: '身高',
   profession: '职业',
   base_of_operations: '行动基地',
-  remark: '台词',
+  creed: '信条',
   description: '描述',
+  remark: '评价',
   health: '生命值',
   armour: '护甲值',
   shield: '护盾值',
@@ -284,11 +285,11 @@ class HeroEdit extends PureComponent {
                   </Form.Item>
                 </Col>
                 <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24}>
-                  <Form.Item label={fieldLabels.remark}>
-                    {getFieldDecorator('remark', {
-                      initialValue: current.remark || '',
-                      rules: [{ required: false, message: '请输入英雄台词' }],
-                    })(<Input style={{ width: '100%' }} placeholder="请输入英雄台词" />)}
+                  <Form.Item label={fieldLabels.creed}>
+                    {getFieldDecorator('creed', {
+                      initialValue: current.creed,
+                      rules: [{ required: false, message: '请输入英雄信条' }],
+                    })(<Input style={{ width: '100%' }} placeholder="请输入英雄信条" />)}
                   </Form.Item>
                 </Col>
               </Row>
@@ -303,7 +304,16 @@ class HeroEdit extends PureComponent {
                     )}
                   </Form.Item>
                 </Col>
-                <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24} />
+                <Col xl={{ span: 6, offset: 2 }} lg={{ span: 8 }} md={{ span: 12 }} sm={24}>
+                  <Form.Item label={fieldLabels.remark}>
+                    {getFieldDecorator('remark', {
+                      initialValue: current.remark || '',
+                      rules: [{ required: false, message: '请输入英雄评价' }],
+                    })(
+                      <TextArea style={{ width: '100%' }} rows={4} placeholder="请输入英雄评价" />
+                    )}
+                  </Form.Item>
+                </Col>
                 <Col xl={{ span: 8, offset: 2 }} lg={{ span: 10 }} md={{ span: 24 }} sm={24} />
               </Row>
             </Form>
